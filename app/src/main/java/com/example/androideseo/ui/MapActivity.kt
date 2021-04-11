@@ -1,0 +1,124 @@
+package com.example.androideseo.ui
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
+import android.location.Location
+import android.location.LocationManager
+import android.net.Uri
+import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.afollestad.materialdialogs.MaterialDialog
+import com.example.androideseo.R
+import com.example.androideseo.data.LocalPreferences
+import com.example.androideseo.databinding.ActivityMapBinding
+import java.util.*
+
+
+class MapActivity : AppCompatActivity() {
+
+
+    private val PERMISSION_REQUEST_LOCATION: Int = 999;
+    private  val lateseo = 47.492884574915365;
+    private  val longeseo = -0.5509639806591626;
+    private lateinit var binding: ActivityMapBinding // <-- Référence à notre ViewBinding
+
+    companion object {
+        fun getStartIntent(context: Context): Intent {
+            return Intent(context, MapActivity::class.java)
+        }
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_map)
+
+        // --> Indique que l'on utilise le ViewBinding
+        binding = ActivityMapBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.buttonMap.setOnClickListener {
+            this.requestPermission();
+        }
+
+        binding.buttonGoogleMap.setOnClickListener {
+            val res = this.requestPermission();
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
+        }
+    }
+
+    private fun hasPermission(): Boolean {
+        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestPermission() {
+        if (!hasPermission()) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    PERMISSION_REQUEST_LOCATION
+            )
+        } else {
+            getLocation()
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        when (requestCode) {
+            PERMISSION_REQUEST_LOCATION -> {
+                // If request is cancelled, the result arrays are empty.
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    // Permission obtenue, Nous continuons la suite de la logique.
+                    getLocation()
+                } else {
+                    // TODO
+                    // Permission non accepté, expliqué ici via une activité ou une dialog pourquoi nous avons besoin de la permission
+                    Toast.makeText(this@MapActivity,"Pour vous localiser merci d'accepter le parametre précedant",Toast.LENGTH_LONG).show()
+                }
+                return
+            }
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun getLocation() {
+        if (hasPermission()) {
+            val locationManager = applicationContext.getSystemService(LOCATION_SERVICE) as LocationManager?
+            locationManager?.run {
+                locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER)?.run {
+                    geoCode(this)
+                }
+            }
+        }
+    }
+
+    private fun geoCode(location: Location): MutableList<Address>? {
+        val geocoder = Geocoder(this, Locale.getDefault())
+        val results = geocoder.getFromLocation(location.latitude, location.longitude, 1)
+        val locationText = findViewById<TextView>(R.id.textMap)
+        if (results.isNotEmpty()) {
+            val distance = FloatArray(1)
+            android.location.Location.distanceBetween(lateseo, longeseo, location.latitude, location.longitude,distance)
+            distance[0] = distance[0] / 1000;           // Conversion en km
+            Toast.makeText(this@MapActivity,"Distance vers l'ESEO:  " + distance[0].toString() + "  en kms",Toast.LENGTH_LONG).show()
+            locationText.text = results[0].getAddressLine(0)
+            LocalPreferences.getInstance(this).addToHistory(locationText.text.toString())
+        }
+        return results;
+    }
+}

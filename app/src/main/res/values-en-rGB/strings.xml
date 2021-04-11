@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ratt ESEO</string>
+    <string name="splash">"Martin Courier de Méré / A2 / 2021 "</string>
+    <string name="retard">" Are you late for your catch-ups?"</string>
+    <string name="Historique">History</string>
+    <string name="ajoutAdresse">" Add address History"</string>
+    <string name="suppAllHist">Delete History</string>
+    <string name="goGoogleMap">See on google map</string>
+    <string name="eseo">" Eseo website"</string>
+    <string name="map">google map</string>
+    <string name="localisation">" Locate me"</string>
+    <string name="whatever">back</string>
+    <string name="retour">back</string>
+    <string name="w">" Settings"</string>
+    <string name="parametre">" Settings"</string>
+</resources>

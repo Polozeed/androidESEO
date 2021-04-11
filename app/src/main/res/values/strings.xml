@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Ratt ESEO</string>
+    <string name="splash">"Martin Courier de Méré / A2 / 2021 "</string>
+    <string name="retard">Tu es en retard pour tes rattrapages ?</string>
+    <string name="Historique">historique</string>
+    <string name="hello_eseo">Hello Eseo!</string>
+    <string name="troll">troll</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="testToast">hello la team eseo</string>
+    <string name="bonjour_eseo">Bonjour Eseo</string>
+    <string name="normal">Normal</string>
+    <string name="yes">oui</string>
+    <string name="title_activity_splash">SplashActivity1</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="eseo">Site Eseo</string>
+    <string name="map">google map</string>
+    <string name="localisation">Me localiser</string>
+    <string name="goGoogleMap">Voir sur google map</string>
+    <string name="Recycle">recycle</string>
+    <string name="whatever">retour</string>
+    <string name="retour">retour</string>
+    <string name="parametre">parametre</string>
+    <string name="w">Parametre</string>
+    <string name="pageLocalisation">pageLocation</string>
+    <string name="Localisation">localisation</string>
+    <string name="ajoutAdresse">Ajouter adresse Historique</string>
+    <string name="espace" />
+    <string name="suppAllHist">Supprimer Historique</string>
+
+
+</resources>
