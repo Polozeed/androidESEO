@@ -13,16 +13,15 @@ import com.example.androideseo.R
 class AdapterParam(private val deviceList: Array<ParametreActivity.SettingsItem>, private val onClick: ((selectedDevice: ParametreActivity.SettingsItem) -> Unit)? = null) : RecyclerView.Adapter<AdapterParam.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun showItem(device: ParametreActivity.SettingsItem,
+        fun showItem(param: ParametreActivity.SettingsItem,
                      onClick: ((selectedDevice: ParametreActivity.SettingsItem) -> Unit)? = null) {
-            itemView.findViewById<TextView>(R.id.param).text= device.name
-            itemView.findViewById<ImageView>(R.id.imageparam).setImageResource(device.icon)
+            itemView.findViewById<TextView>(R.id.param).text= param.name
+            itemView.findViewById<ImageView>(R.id.imageparam).setImageResource(param.icon)
             itemView.findViewById<ConstraintLayout>(R.id.layoutID).setOnClickListener{
-                device.onClick.invoke()
+                param.onClick.invoke()
             }
         }
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.param, parent, false)

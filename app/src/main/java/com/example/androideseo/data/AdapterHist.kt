@@ -9,13 +9,12 @@ import com.example.androideseo.R
 
 class AdapterHist(private val deviceList: Array<String>, private val onClick: ((selectedDevice: String) -> Unit)? = null) : RecyclerView.Adapter<AdapterHist.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun showItem(device: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
-            itemView.findViewById<TextView>(R.id.texthist).text = device
 
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun showItem(valueHist: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
+            itemView.findViewById<TextView>(R.id.texthist).text = valueHist
             if(onClick != null) {
                 itemView.setOnClickListener {
-                    onClick(device)
                 }
             }
         }

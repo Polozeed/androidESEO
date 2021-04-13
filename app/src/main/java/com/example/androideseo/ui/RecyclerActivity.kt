@@ -37,9 +37,5 @@ class RecyclerActivity : AppCompatActivity() {
                 Toast.makeText(this, LocalPreferences.getInstance(this).getHistory().toString(), Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
-
     }
 }

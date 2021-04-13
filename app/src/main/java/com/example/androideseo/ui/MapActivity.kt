@@ -11,6 +11,8 @@ import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +26,6 @@ import java.util.*
 
 class MapActivity : AppCompatActivity() {
 
-
     private val PERMISSION_REQUEST_LOCATION: Int = 999;
     private  val lateseo = 47.492884574915365;
     private  val longeseo = -0.5509639806591626;
@@ -36,20 +37,29 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+
+        val animationbounce: Animation = AnimationUtils.loadAnimation(applicationContext,
+                R.anim.bounce_animation)
+
+        supportActionBar?.apply {
+            setTitle(getString(R.string.activitymap))
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         // --> Indique que l'on utilise le ViewBinding
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.buttonMap?.startAnimation(animationbounce);
         binding.buttonMap.setOnClickListener {
             this.requestPermission();
         }
 
+        binding.buttonGoogleMap?.startAnimation(animationbounce);
         binding.buttonGoogleMap.setOnClickListener {
             val res = this.requestPermission();
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
@@ -83,12 +93,11 @@ class MapActivity : AppCompatActivity() {
             PERMISSION_REQUEST_LOCATION -> {
                 // If request is cancelled, the result arrays are empty.
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Permission obtenue, Nous continuons la suite de la logique.
+                    // Permission obtenue
                     getLocation()
                 } else {
-                    // TODO
-                    // Permission non accepté, expliqué ici via une activité ou une dialog pourquoi nous avons besoin de la permission
-                    Toast.makeText(this@MapActivity,"Pour vous localiser merci d'accepter le parametre précedant",Toast.LENGTH_LONG).show()
+                    // Permission non accordé par l'utilisateur
+                    Toast.makeText(this@MapActivity,getString(R.string.textacceptPerm),Toast.LENGTH_LONG).show()
                 }
                 return
             }

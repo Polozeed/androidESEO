@@ -14,4 +14,19 @@
     <string name="retour">back</string>
     <string name="w">" Settings"</string>
     <string name="parametre">" Settings"</string>
+    <string name="Localisation">localisation</string>
+    <string name="splash2">Android Project</string>
+    <string name="easter">If you are here you have earned the right to give me an 18/20 for this project!     cordially</string>
+    <string name="trollpage">Troll Page</string>
+    <string name="histTitle">Location history</string>
+    <string name="histvide">Empty History</string>
+    <string name="activitymap">Map Activity</string>
+    <string name="textacceptPerm">To locate you, please accept the previous parameter</string>
+    <string name="salutprof">Hi, I\'m the teacher</string>
+    <string name="testapp">I test your Cool App</string>
+    <string name="paramApp">" Parameter Application"</string>
+    <string name="paramLoc">Parameter Location</string>
+    <string name="carte">Map</string>
+    <string name="mailEtu">Mail to studient</string>
+    <string name="siteEseotext">ESEO Web site</string>
 </resources>

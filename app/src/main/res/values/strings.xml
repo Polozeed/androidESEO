@@ -34,6 +34,24 @@
     <string name="ajoutAdresse">Ajouter adresse Historique</string>
     <string name="espace" />
     <string name="suppAllHist">Supprimer Historique</string>
+    <string name="splash2">Projet Android</string>
+    <string name="easter">Si vous etes ici vous avez gagner le droit de me mettre un 18/20 à ce projet !
+    Cordialement </string>
+    <string name="trollpage">Troll Page</string>
+    <string name="histTitle">Historique des localisations</string>
+    <string name="histvide">Historique Vide</string>
+    <string name="activitymap">Activité Map</string>
+    <string name="textacceptPerm">Pour vous localiser merci d\'accepter le parametre précedant</string>
+    <string name="salutprof">salut c\'est moi le prof</string>
+    <string name="testapp">je test ton App Trop Cool</string>
+    <string name="geoEseo">geo:47.492884574915365,-0.5509639806591626</string>
+    <string name="mailtoMoi">\"mailto:martincourierdemere@gmail.com \"</string>
+    <string name="siteEseo">https://eseo.fr/</string>
+    <string name="paramApp">Paramètre Application</string>
+    <string name="paramLoc">Paramètre Localisation</string>
+    <string name="carte">Carte</string>
+    <string name="mailEtu">Mail Etudiant</string>
+    <string name="siteEseotext">Site de l\'ESEO</string>
 
 
 </resources>

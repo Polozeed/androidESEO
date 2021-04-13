@@ -3,6 +3,7 @@ package com.example.androideseo.ui
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,9 +22,6 @@ class HistoryActivity : AppCompatActivity() {
             return Intent(context, HistoryActivity::class.java)
         }
     }
-
-
-    data class SettingsItem(val name: String, val icon: Int, val onClick: (() -> Unit)) {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,13 +43,11 @@ class HistoryActivity : AppCompatActivity() {
         }
 
         supportActionBar?.apply {
-            setTitle(R.string.w)
+            setTitle(getString(R.string.histTitle))
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
     }
-
-
 
     override fun onSupportNavigateUp(): Boolean {
         finish()

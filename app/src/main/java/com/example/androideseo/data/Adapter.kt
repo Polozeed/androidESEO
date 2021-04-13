@@ -9,14 +9,12 @@ import com.example.androideseo.R
 
 class Adapter(private val deviceList: Array<String>, private val onClick: ((selectedDevice: String) -> Unit)? = null) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun showItem(device: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
-            itemView.findViewById<TextView>(R.id.title).text = device
-
+        fun showItem(value: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
+            itemView.findViewById<TextView>(R.id.title).text = value
             if(onClick != null) {
                 itemView.setOnClickListener {
-                    onClick(device)
+                    onClick(value)
                 }
             }
         }

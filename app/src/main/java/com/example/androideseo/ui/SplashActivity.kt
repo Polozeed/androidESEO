@@ -9,12 +9,13 @@ import com.example.androideseo.R
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        // Lancement du slashActivity durant 4 seconde puis startActvity Main
         Handler(Looper.getMainLooper()).postDelayed({
-
             startActivity(MainActivity.getStartIntent(this))
-        }, 3000)
+        }, 4000)
     }
 }
