@@ -23,8 +23,9 @@ interface ApiService {
             val password : String
     )
 
-    @POST("/client/inscription")
-    suspend fun postconnexion(user: Editable, password: Editable) : Client
+    @Headers("Content-Type: application/json")
+    @POST("/client/connexion")
+    suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
 
     @GET("/api/users/{")
     suspend fun getUser(@Path("id") id: Int): Client

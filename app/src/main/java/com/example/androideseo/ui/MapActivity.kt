@@ -17,7 +17,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.afollestad.materialdialogs.MaterialDialog
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMapBinding

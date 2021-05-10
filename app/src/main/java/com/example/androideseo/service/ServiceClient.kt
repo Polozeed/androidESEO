@@ -1,18 +1,28 @@
 package com.example.androideseo.service
 
 import android.text.Editable
+import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
+import com.google.gson.annotations.SerializedName
 
 class ServiceClient {
 
+    data class UserInfo (
+            @SerializedName("mdp") val mdp: String,
+            @SerializedName("login") val login: String
+
+    )
+
 
    suspend fun connexion(user: Editable, mdp: Editable): Client {
-       val api = ApiService.instance.postconnexion(user,mdp)
-       val  user1 =  api.user
-       val password1 = api.password
-       val token1 = api.token
-       val client = Client(user1,password1,token1)
-       return client
+       val userInfo =UserInfo(
+               mdp = mdp.toString(),
+               login = user.toString()
+                )
+       val api = ApiService.instance.postconnexion(userInfo)
+
+       return api
+
 
    }
 

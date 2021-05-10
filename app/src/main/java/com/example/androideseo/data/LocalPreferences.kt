@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.text.method.TextKeyListener.clear
 import android.widget.Toast
+import com.example.androideseo.service.ServiceClient
 
 class LocalPreferences private constructor(context: Context) {
 
@@ -21,6 +22,18 @@ class LocalPreferences private constructor(context: Context) {
             }
         }
     }
+
+
+    // Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
+    fun addTokenToHistory(newEntry: String){
+        sharedPreferences.edit().putString("token",newEntry)
+    }
+
+    // Fct permettant de recupérer les adresses sauvegardés
+    fun getToken(): String? {
+        return sharedPreferences.getString("token", String())
+    }
+
 
     // Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
     fun addToHistory(newEntry: String){

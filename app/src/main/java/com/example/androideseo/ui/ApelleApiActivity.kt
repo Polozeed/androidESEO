@@ -7,8 +7,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androideseo.R
+import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityApelleapiBinding
-import com.example.androideseo.service.ApiService
+import com.example.androideseo.service.ServiceClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -53,16 +54,13 @@ class ApelleApiActivity : AppCompatActivity() {
         binding.btnConnection?.setOnClickListener {
             val user_name = user_name.text;
             val password = password.text;
-            println("je suis ici ")
             CoroutineScope(Dispatchers.IO).launch {
                 runCatching {
-                    println("je suis ici 2")
-                    val arrStatus = ApiService.instance.postconnexion(user_name,password)
-                    println("je suis ici 3")
+                    val res = ServiceClient.instance.connexion(user_name,password)
+                    LocalPreferences.getInstance(this@ApelleApiActivity).addTokenToHistory(res.token)
                     runOnUiThread{
-
-                        Toast.makeText(this@ApelleApiActivity, "Résultat de l'appel réseau" + arrStatus.toString(), Toast.LENGTH_SHORT).show()
-                        System.out.println("--------------")
+                        Toast.makeText(this@ApelleApiActivity,  LocalPreferences.getInstance(this@ApelleApiActivity).getToken().toString(),
+                                Toast.LENGTH_SHORT).show()
                     }
                 }
             }
