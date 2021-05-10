@@ -3,17 +3,20 @@
     package="com.example.androideseo">
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/app"
         android:label="En retard pour tes rattrapages ?"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidESEO">
 
         <activity android:name=".ui.ParametreActivity"></activity>
         <activity android:name=".ui.RecyclerActivity" />
+        <activity android:name=".ui.ApelleApiActivity" />
         <activity android:name=".ui.EastereggsActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.HistoryActivity" />

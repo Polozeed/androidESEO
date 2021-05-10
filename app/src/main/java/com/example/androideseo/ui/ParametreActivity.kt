@@ -32,29 +32,29 @@ class ParametreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_parametre)
 
         val arr = arrayOf(
-            SettingsItem(getString(R.string.paramApp), R.drawable.parametre) {
+            SettingsItem("Paramètre Application", R.drawable.parametre) {
                 // Action au clique
                 startActivity(Intent(ACTION_SETTINGS))
             },
-            SettingsItem(getString(R.string.paramLoc), R.drawable.paramlocation) {
+            SettingsItem("Paramètre Localisation", R.drawable.paramlocation) {
                 // Action au clique
                 startActivity(Intent(ACTION_LOCATION_SOURCE_SETTINGS))
             },
-            SettingsItem(getString(R.string.carte), R.drawable.parammap) {
+            SettingsItem("Carte", R.drawable.parammap) {
                 // Action au clique
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.geoEseo))));
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:47.492884574915365,-0.5509639806591626")));
 
             },
-            SettingsItem(getString(R.string.mailEtu), R.drawable.email) {
+            SettingsItem("Mail Etudiant", R.drawable.email) {
                 // Action au clique
-                startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse(getString(R.string.mailtoMoi) +
-                        "?subject=" + Uri.encode(getString(R.string.testapp)) +
-                        "&body=" + Uri.encode(getString(R.string.salutprof)))))
+                startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:martincourierdemere@gmail.com " +
+                        "?subject=" + Uri.encode("je test ton App Trop Cool") +
+                        "&body=" + Uri.encode("salut c'est moi le prof"))))
 
                 },
-            SettingsItem(getString(R.string.siteEseotext), R.drawable.logo) {
+            SettingsItem("Site de l'ESEO", R.drawable.logo) {
                 // Action au clique
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.siteEseo) )));
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://eseo.fr/" )));
             }
 
         )

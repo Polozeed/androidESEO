@@ -36,6 +36,16 @@
         app:layout_constraintRight_toRightOf="@id/logo"
         app:layout_constraintTop_toTopOf="@id/logo" />
 
+
+    <Button
+        android:id="@+id/buttonApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/Recycle"
+        android:text="Api"
+        app:layout_editor_absoluteX="185dp"
+        app:layout_editor_absoluteY="597dp" />
+
     <Button
         android:id="@+id/buttonhist"
         android:layout_width="wrap_content"

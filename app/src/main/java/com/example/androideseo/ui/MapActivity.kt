@@ -54,14 +54,13 @@ class MapActivity : AppCompatActivity() {
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonMap?.startAnimation(animationbounce);
+        binding.buttonMap.startAnimation(animationbounce);
         binding.buttonMap.setOnClickListener {
             this.requestPermission();
         }
 
-        binding.buttonGoogleMap?.startAnimation(animationbounce);
+        binding.buttonGoogleMap.startAnimation(animationbounce);
         binding.buttonGoogleMap.setOnClickListener {
-            val res = this.requestPermission();
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
         }
     }
@@ -104,6 +103,7 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+
     @SuppressLint("MissingPermission")
     private fun getLocation() {
         if (hasPermission()) {
@@ -127,6 +127,7 @@ class MapActivity : AppCompatActivity() {
             Toast.makeText(this@MapActivity,"Distance vers l'ESEO:  " + distance[0].toString() + "  en kms",Toast.LENGTH_LONG).show()
             locationText.text = results[0].getAddressLine(0)
             LocalPreferences.getInstance(this).addToHistory(locationText.text.toString())
+
         }
         return results;
     }

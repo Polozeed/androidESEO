@@ -60,6 +60,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(MapActivity.getStartIntent(this@MainActivity), options.toBundle())
         }
 
+
+        binding.buttonApi?.setOnClickListener {
+            startActivity(ApelleApiActivity.getStartIntent(this@MainActivity))
+        }
+
         binding.logo?.setOnClickListener {
             // Utilisation d'animation de lancement d'activité
             val options = ActivityOptions.makeScaleUpAnimation(binding.logo, 10, 10, binding.logo!!.getWidth(), binding.logo!!.getHeight())
