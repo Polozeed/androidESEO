@@ -3,13 +3,15 @@ package com.example.androideseo.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androideseo.R
 import com.example.androideseo.databinding.ActivityApelleapiBinding
-import com.example.androideseo.databinding.ActivityMainBinding
+import com.example.androideseo.service.ApiService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class ApelleApiActivity : AppCompatActivity() {
@@ -51,10 +53,20 @@ class ApelleApiActivity : AppCompatActivity() {
         binding.btnConnection?.setOnClickListener {
             val user_name = user_name.text;
             val password = password.text;
-            Toast.makeText(this@ApelleApiActivity, user_name , Toast.LENGTH_LONG).show()
+            println("je suis ici ")
+            CoroutineScope(Dispatchers.IO).launch {
+                runCatching {
+                    println("je suis ici 2")
+                    val arrStatus = ApiService.instance.postconnexion(user_name,password)
+                    println("je suis ici 3")
+                    runOnUiThread{
 
-            // your code to validate the user_name and password combination
-            // and verify the same
+                        Toast.makeText(this@ApelleApiActivity, "Résultat de l'appel réseau" + arrStatus.toString(), Toast.LENGTH_SHORT).show()
+                        System.out.println("--------------")
+                    }
+                }
+            }
+
 
         }
     }

@@ -8,7 +8,12 @@ data class Client (
 
 
 ){
+
+    override fun toString(): String {
+        return super.toString()
+    }
+
     fun identity(): String {
-        return "$user $password"
+        return "$user $password $token"
     }
 }

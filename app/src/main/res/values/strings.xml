@@ -43,9 +43,9 @@
     <string name="activitymap">Activité Map</string>
     <string name="textacceptPerm">Pour vous localiser merci d\'accepter le parametre précedant</string>
     <string name="luminosite">luminosite</string>
-    <string name="connexion">connexion</string>
-    <string name="reset">reset</string>
     <string name="login">login</string>
+    <string name="reset">reset</string>
+    <string name="connexion">connexion</string>
 
 
 </resources>

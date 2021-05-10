@@ -1,5 +1,6 @@
 package com.example.androideseo.service
 
+import android.text.Editable
 import com.example.androideseo.BuildConfig
 import com.example.androideseo.data.models.Client
 import com.google.gson.GsonBuilder
@@ -22,8 +23,8 @@ interface ApiService {
             val password : String
     )
 
-    @POST("/client/connexion")
-    suspend fun postconnexion(@Body post: Post) : Client
+    @POST("/client/inscription")
+    suspend fun postconnexion(user: Editable, password: Editable) : Client
 
     @GET("/api/users/{")
     suspend fun getUser(@Path("id") id: Int): Client
@@ -31,6 +32,8 @@ interface ApiService {
     @GET("/api/test/martin")
     suspend fun test(): String
 
+    @GET("/client/liste")
+    suspend fun test2(): String
 
     companion object {
         /**
@@ -53,6 +56,7 @@ interface ApiService {
                     .addInterceptor(Interceptor { chain: Interceptor.Chain ->
                         val request =
                                 chain.request().newBuilder().addHeader("Accept", "application/json").build()
+
                         chain.proceed(request)
                     })
                     .build()
