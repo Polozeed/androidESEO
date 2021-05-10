@@ -4,16 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.afollestad.recyclical.datasource.emptyDataSource
 import com.example.androideseo.R
-import com.example.androideseo.data.AdapterApi
 import com.example.androideseo.databinding.ActivityApelleapiBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.androideseo.databinding.ActivityMainBinding
 
 
 class ApelleApiActivity : AppCompatActivity() {
@@ -33,44 +29,35 @@ class ApelleApiActivity : AppCompatActivity() {
     }
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_apelleapi)
+        setContentView(R.layout.activity_main)
 
         binding = ActivityApelleapiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dataSource = emptyDataSource()
+        // get reference to all views
+        var user_name = findViewById<EditText>(R.id.login)
+        var password = findViewById<EditText>(R.id.password)
 
 
-                findViewById<Button>(R.id.apelleApi).setOnClickListener {
-                    CoroutineScope(Dispatchers.IO).launch {
-                        runCatching {
-                            val id = 1
-                            val arrStatus = ApiService.instance.gettest()
+        binding.btnReset?.setOnClickListener {
+            // clearing user_name and password edit text views on reset button click
+            user_name.setText("")
+            password.setText("")
+        }
 
-                            runOnUiThread {
-                                //dataSource.addAll(arrStatus.data.toList())
-                                Toast.makeText(
-                                    this@ApelleApiActivity,
-                                    "Résultat de l'appel réseau  :  " + arrStatus.toString(),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
-                    }
-                }
+        // set on-click listener
+        binding.btnConnection?.setOnClickListener {
+            val user_name = user_name.text;
+            val password = password.text;
+            Toast.makeText(this@ApelleApiActivity, user_name , Toast.LENGTH_LONG).show()
 
-                /*binding = ActivityApelleapiBinding.inflate(layoutInflater)
-                setContentView(binding.root)
-                binding.recyclerapi.layoutManager = LinearLayoutManager(this)
-                binding.recyclerapi.adapter = AdapterApi(dataSource)
+            // your code to validate the user_name and password combination
+            // and verify the same
 
-                 */
-
-            }
+        }
+    }
 
 
 
