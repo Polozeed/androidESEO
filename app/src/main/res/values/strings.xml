@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Ratt ESEO</string>
-    <string name="splash">"Martin Courier de Méré / A2 / 2021 "</string>
-    <string name="retard">Tu es en retard pour tes rattrapages ?</string>
+    <string name="splash">"Maxime Pouplain /Martin Courier de Méré / A2 / 2021 "</string>
+    <string name="retard"> Les bons plans Angevins ?</string>
     <string name="Historique">historique</string>
     <string name="hello_eseo">Hello Eseo!</string>
     <string name="troll">troll</string>

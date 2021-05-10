@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.322"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/aeramap"></com.airbnb.lottie.LottieAnimationView>
+        app:lottie_rawRes="@raw/beer"></com.airbnb.lottie.LottieAnimationView>
 
     <Button
         android:id="@+id/buttonLoc"
@@ -43,8 +43,8 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/Recycle"
         android:text="Api"
-        app:layout_editor_absoluteX="185dp"
-        app:layout_editor_absoluteY="597dp" />
+        app:layout_editor_absoluteX="307dp"
+        app:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/buttonhist"
