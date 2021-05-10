@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         binding.logo?.setOnClickListener {
             // Utilisation d'animation de lancement d'activité
             val options = ActivityOptions.makeScaleUpAnimation(binding.logo, 10, 10, binding.logo!!.getWidth(), binding.logo!!.getHeight())
-            startActivity(EastereggsActivity.getStartIntent(this@MainActivity), options.toBundle())
+            startActivity(SensorActivity.getStartIntent(this@MainActivity), options.toBundle())
         }
     };
 }

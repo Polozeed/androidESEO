@@ -29,4 +29,5 @@
     <string name="carte">Map</string>
     <string name="mailEtu">Mail to studient</string>
     <string name="siteEseotext">ESEO Web site</string>
+    <string name="capteur">Sensors Page</string>
 </resources>

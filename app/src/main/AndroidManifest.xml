@@ -17,7 +17,7 @@
         <activity android:name=".ui.ParametreActivity"></activity>
         <activity android:name=".ui.RecyclerActivity" />
         <activity android:name=".ui.ApelleApiActivity" />
-        <activity android:name=".ui.EastereggsActivity" />
+        <activity android:name=".ui.SensorActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.HistoryActivity" />
         <activity
