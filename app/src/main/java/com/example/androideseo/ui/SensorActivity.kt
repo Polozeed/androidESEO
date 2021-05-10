@@ -5,16 +5,16 @@ import android.content.Context
 import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.hardware.SensorManager.SENSOR_DELAY_UI
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androideseo.R
 import com.example.androideseo.databinding.ActivitySensorBinding
 
 
-class SensorActivity : AppCompatActivity() {
+class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var binding: ActivitySensorBinding // <-- Référence à notre ViewBinding
     private lateinit var sensorManager: SensorManager
@@ -33,7 +33,7 @@ class SensorActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.apply {
-            setTitle(getString(R.string.capteur))
+            setTitle("capteur")
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -44,16 +44,12 @@ class SensorActivity : AppCompatActivity() {
         return true
     }
 
-    fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
+    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
         // Do something here if sensor accuracy changes.
     }
 
-    fun onSensorChanged(event: SensorEvent) {
-        val millibarsOfPressure = event.values[0]
-        // Do something with this sensor data.
-        binding.capteurLuminosite.setOnClickListener {
-            Toast.makeText(this, "cxx", Toast.LENGTH_SHORT).show()
-        }
+    override fun onSensorChanged(event: SensorEvent) {
+        findViewById<TextView>(R.id.capteurLuminosite).text = getString(event.values[0].toInt())
     }
 
     @Override
