@@ -3,6 +3,7 @@ package com.example.androideseo.service
 import com.example.androideseo.BuildConfig
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
+import com.example.androideseo.data.models.Information
 import com.example.androideseo.data.models.remote.User
 import com.example.androideseo.ui.MyApp
 import com.google.gson.GsonBuilder
@@ -31,11 +32,11 @@ interface ApiService {
     @POST("/client/inscription")
     suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
 
-
+    @POST("/new")
+    suspend fun postinformation(@Path userData: ServiceInformation.information) : Information
 
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
-
 
     @GET("/client/liste")
     suspend fun getUsers(): List<User>
