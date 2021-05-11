@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.example.androideseo.R
 import com.example.androideseo.databinding.ActivityHistoryBinding
+import com.example.androideseo.ui.fragment.ListFragment
 
 class ListClientActivity  : AppCompatActivity() {
 
@@ -14,13 +15,14 @@ class ListClientActivity  : AppCompatActivity() {
 
     companion object {
         fun getStartIntent(context: Context): Intent {
-            return Intent(context, HistoryActivity::class.java)
+            return Intent(context, ListClientActivity::class.java)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listclient)
+        ListFragment
         supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
     }
 

@@ -25,13 +25,13 @@ interface ApiService {
             val password : String
     )
 
-    @Headers("Content-Type: application/json")
     @POST("/client/connexion")
     suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
 
-    @Headers("Content-Type: application/json")
     @POST("/client/inscription")
     suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
+
+
 
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
