@@ -15,6 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
 import com.example.androideseo.data.AdapterSensor
 import com.example.androideseo.databinding.ActivitySensorBinding
+import com.example.androideseo.service.ServiceClient
+import com.example.androideseo.service.ServiceInformation
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class SensorActivity : AppCompatActivity(), SensorEventListener {
@@ -48,6 +53,24 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             setTitle("capteur")
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+        }
+
+        binding.historique.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                runCatching {
+                    val info = ServiceInformation.EnregInfo(
+                            luminosite = arr[0].value.toLong(),
+                            proximite = arr[1].value.toLong(),
+                            gravite = arr[2].value.toLong(),
+                            acceleration = arr[3].value.toLong()
+                    )
+                    val res = ServiceInformation.instance.enregInfo(info)
+                    runOnUiThread{
+                        Toast.makeText(this@SensorActivity, res.identity(),
+                                Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
     }
 

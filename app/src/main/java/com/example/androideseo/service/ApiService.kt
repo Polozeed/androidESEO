@@ -14,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
+import java.util.zip.DataFormatException
 
 
 /**
@@ -32,8 +33,8 @@ interface ApiService {
     @POST("/client/inscription")
     suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
 
-    @POST("/new")
-    suspend fun postinformation(@Path userData: ServiceInformation.information) : Information
+    @POST("/information/new")
+    suspend fun postinformation(@Body infoData: ServiceInformation.EnregInfo) : Information
 
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>

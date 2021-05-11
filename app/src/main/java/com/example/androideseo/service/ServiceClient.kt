@@ -14,7 +14,6 @@ class ServiceClient {
     data class UserInfo(
             @SerializedName("mdp") val mdp: String,
             @SerializedName("login") val login: String
-
     )
 
 

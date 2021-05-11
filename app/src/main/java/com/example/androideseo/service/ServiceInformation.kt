@@ -3,26 +3,22 @@ package com.example.androideseo.service
 import android.text.Editable
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
-import com.example.androideseo.data.models.LocalUser
+import com.example.androideseo.data.models.Information
 import com.example.androideseo.ui.MyApp
 import com.google.gson.annotations.SerializedName
 
 class ServiceInformation {
 
     data class EnregInfo(
-            @SerializedName("mdp") val mdp: String,
-            @SerializedName("login") val login: String
-
+            @SerializedName("luminosite") val luminosite: Long,
+            @SerializedName("proximite") val proximite: Long,
+            @SerializedName("gravite") val gravite: Long,
+            @SerializedName("acceleration") val acceleration: Long
     )
 
 
-    suspend fun information(user: Editable, mdp: Editable): Client {
-        LocalPreferences.getInstance(MyApp.context!!).deleteToken()
-        val userInfo =EnregInfo(
-                mdp = mdp.toString(),
-                login = user.toString()
-        )
-        val api = ApiService.instance.postconnexion(userInfo)
+    suspend fun enregInfo(enregInfo: EnregInfo): Information {
+        val api = ApiService.instance.postinformation(enregInfo)
         return api
     }
 
@@ -35,5 +31,4 @@ class ServiceInformation {
     }
 
 
-}
 }
