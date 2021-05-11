@@ -20,6 +20,7 @@ import com.example.androideseo.service.ServiceInformation
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.concurrent.fixedRateTimer
 
 
 class SensorActivity : AppCompatActivity(), SensorEventListener {
@@ -55,22 +56,22 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             setDisplayShowHomeEnabled(true)
         }
 
-        binding.historique.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                runCatching {
-                    val info = ServiceInformation.EnregInfo(
-                            luminosite = arr[0].value.toLong(),
-                            proximite = arr[1].value.toLong(),
-                            gravite = arr[2].value.toLong(),
-                            acceleration = arr[3].value.toLong()
-                    )
-                    val res = ServiceInformation.instance.enregInfo(info)
-                    runOnUiThread{
-                        Toast.makeText(this@SensorActivity, res.identity(),
-                                Toast.LENGTH_SHORT).show()
+
+        // Code executé toutes les 20 secondes
+        fixedRateTimer("timer",false,0,20000) {
+            //this@SensorActivity.runOnUiThread {
+                CoroutineScope(Dispatchers.IO).launch {
+                    runCatching {
+                        val info = ServiceInformation.EnregInfo(
+                                luminosite = arr[0].value.toLong(),
+                                proximite = arr[1].value.toLong(),
+                                gravite = arr[2].value.toLong(),
+                                acceleration = arr[3].value.toLong()
+                        )
+                        val res = ServiceInformation.instance.enregInfo(info)
                     }
                 }
-            }
+            //}
         }
     }
 
