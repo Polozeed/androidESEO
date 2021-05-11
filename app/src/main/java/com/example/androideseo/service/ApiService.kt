@@ -14,7 +14,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
-import java.util.zip.DataFormatException
 
 
 /**
@@ -39,7 +38,7 @@ interface ApiService {
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
 
-    @GET("/client/liste")
+    @GET("client/liste")
     suspend fun getUsers(): List<User>
 
     @GET("/client/{id}")
