@@ -8,9 +8,10 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
+import com.example.androideseo.data.AdapterSensor
 import com.example.androideseo.databinding.ActivitySensorBinding
 
 
@@ -19,11 +20,18 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var binding: ActivitySensorBinding // <-- Référence à notre ViewBinding
     private lateinit var sensorManager: SensorManager
 
+    private val arr = arrayOf(
+            SettingsItemSensor("Luminosite :", 0.0f, R.drawable.parametre),
+            SettingsItemSensor("Pression :", 0.0f, R.drawable.parametre)
+    )
+
     companion object {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, SensorActivity::class.java)
         }
     }
+
+    data class SettingsItemSensor(val name: String, var value: Float, val icon: Int) {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,16 +57,22 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent) {
-        findViewById<TextView>(R.id.capteurLuminosite).text = event.values[0].toString()
+        if(event.sensor.type == Sensor.TYPE_PRESSURE) {
+            arr[0].value = event.values[0]
+        } else {
+            arr[0].value = event.values[0]
+        }
+        binding.sensorList.adapter?.notifyDataSetChanged()
     }
 
     override fun onResume() {
         super.onResume()
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-        sensorManager.registerListener(
-            this,
-            sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT),
-            SensorManager.SENSOR_DELAY_UI)
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT), SensorManager.SENSOR_DELAY_UI)
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE), SensorManager.SENSOR_DELAY_UI)
+
+        binding.sensorList.layoutManager = LinearLayoutManager(this)
+        binding.sensorList.adapter = AdapterSensor(arr)
     }
 
     override fun onPause() {
