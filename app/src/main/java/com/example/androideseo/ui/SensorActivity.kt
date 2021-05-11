@@ -49,20 +49,18 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent) {
-        findViewById<TextView>(R.id.capteurLuminosite).text = getString(event.values[0].toInt())
+        findViewById<TextView>(R.id.capteurLuminosite).text = event.values[0].toString()
     }
 
-    @Override
     override fun onResume() {
         super.onResume()
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensorManager.registerListener(
             this,
             sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT),
-            SensorManager.SENSOR_DELAY_UI);
+            SensorManager.SENSOR_DELAY_UI)
     }
 
-    @Override
     override fun onPause() {
         super.onPause()
         sensorManager.unregisterListener(this)
