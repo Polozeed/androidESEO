@@ -8,6 +8,8 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
@@ -21,8 +23,10 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
 
     private val arr = arrayOf(
-            SettingsItemSensor("Luminosite :", 0.0f, R.drawable.parametre),
-            SettingsItemSensor("Pression :", 0.0f, R.drawable.parametre)
+            SettingsItemSensor("Luminosité", 0.0f, R.drawable.light),
+            SettingsItemSensor("Proximité", 0.0f, R.drawable.proximity),
+            SettingsItemSensor("Gravité", 0.0f, R.drawable.planete),
+            SettingsItemSensor("Accélération", 0.0f, R.drawable.speed)
     )
 
     companion object {
@@ -57,11 +61,15 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent) {
-        if(event.sensor.type == Sensor.TYPE_PRESSURE) {
-            arr[0].value = event.values[0]
-        } else {
-            arr[0].value = event.values[0]
+        when(event.sensor.type) {
+            Sensor.TYPE_LIGHT -> arr[0].value = event.values[0]
+            Sensor.TYPE_PROXIMITY -> arr[1].value = event.values[0]
+            Sensor.TYPE_GRAVITY-> arr[2].value = event.values[1]
+            Sensor.TYPE_LINEAR_ACCELERATION-> arr[3].value = event.values[2]
+            else ->  Toast.makeText(this, "Capteurs inexistants", Toast.LENGTH_SHORT).show()
         }
+        //println("------------------------ type :" + event.sensor.type)
+        //println("------------------------ type :" + event.values[0])
         binding.sensorList.adapter?.notifyDataSetChanged()
     }
 
@@ -69,7 +77,9 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         super.onResume()
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT), SensorManager.SENSOR_DELAY_UI)
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE), SensorManager.SENSOR_DELAY_UI)
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_UI)
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_UI)
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_UI)
 
         binding.sensorList.layoutManager = LinearLayoutManager(this)
         binding.sensorList.adapter = AdapterSensor(arr)
@@ -77,6 +87,9 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onPause() {
         super.onPause()
-        sensorManager.unregisterListener(this)
+        sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT))
+        sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY))
+        sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY))
+        sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION))
     }
 }

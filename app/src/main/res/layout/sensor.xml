@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/sensor"
-        android:layout_width="120dp"
+        android:layout_width="175dp"
         android:layout_height="66dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="20dp"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/value"
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:padding="20dp"
@@ -39,13 +39,4 @@
         app:layout_constraintStart_toEndOf="@id/sensor"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/arrowImage"
-        android:layout_width="45dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@id/value"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow"
-        tools:layout_editor_absoluteY="4dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
