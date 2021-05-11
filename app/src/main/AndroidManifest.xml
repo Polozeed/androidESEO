@@ -8,6 +8,7 @@
 
     <application
         android:allowBackup="true"
+        android:name="com.example.androideseo.ui.MyApp"
         android:icon="@drawable/app"
         android:label="Les bons plans Angevins ?"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -17,7 +18,8 @@
 
         <activity android:name=".ui.ParametreActivity"></activity>
         <activity android:name=".ui.RecyclerActivity" />
-        <activity android:name=".ui.ApelleApiActivity" />
+        <activity android:name=".ui.InscriptionActivity" />
+        <activity android:name=".ui.ConnexionActivity" />
         <activity android:name=".ui.SensorActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.HistoryActivity" />

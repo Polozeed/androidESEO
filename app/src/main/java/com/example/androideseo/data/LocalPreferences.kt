@@ -2,9 +2,6 @@ package com.example.androideseo.data
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.text.method.TextKeyListener.clear
-import android.widget.Toast
-import com.example.androideseo.service.ServiceClient
 
 class LocalPreferences private constructor(context: Context) {
 
@@ -21,12 +18,14 @@ class LocalPreferences private constructor(context: Context) {
                 return INSTANCE!!
             }
         }
+
+
     }
 
 
     // Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
     fun addTokenToHistory(newEntry: String){
-        sharedPreferences.edit().putString("token",newEntry)
+        sharedPreferences.edit().putString("token",newEntry).apply()
     }
 
     // Fct permettant de recupérer les adresses sauvegardés

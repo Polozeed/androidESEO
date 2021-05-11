@@ -8,13 +8,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.recyclical.datasource.DataSource
 import com.example.androideseo.R
-import com.example.androideseo.ui.ApelleApiActivity
+import com.example.androideseo.ui.ConnexionActivity
 
 
 class AdapterApi(private val res: DataSource<Any>) : RecyclerView.Adapter<AdapterApi.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun showItem(param: ApelleApiActivity.UserApi) {
+        fun showItem(param: ConnexionActivity.UserApi) {
             itemView.findViewById<TextView>(R.id.param).text= param.toString()
             itemView.findViewById<ConstraintLayout>(R.id.title).setOnClickListener{
             }

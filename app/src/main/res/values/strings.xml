@@ -46,6 +46,7 @@
     <string name="login">login</string>
     <string name="reset">reset</string>
     <string name="connexion">connexion</string>
+    <string name="inscription">inscription</string>
 
 
 </resources>

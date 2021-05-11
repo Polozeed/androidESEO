@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.buttonApi?.setOnClickListener {
-            startActivity(ApelleApiActivity.getStartIntent(this@MainActivity))
+            startActivity(ConnexionActivity.getStartIntent(this@MainActivity))
         }
 
         binding.logo?.setOnClickListener {

@@ -1,8 +1,9 @@
 package com.example.androideseo.service
 
-import android.text.Editable
 import com.example.androideseo.BuildConfig
+import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
+import com.example.androideseo.ui.MyApp
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -27,11 +28,15 @@ interface ApiService {
     @POST("/client/connexion")
     suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
 
+    @Headers("Content-Type: application/json")
+    @POST("/client/inscription")
+    suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
+
+    @GET("/client/liste")
+    suspend fun getListeClient(): List<Client>
+
     @GET("/api/users/{")
     suspend fun getUser(@Path("id") id: Int): Client
-
-    @GET("/api/test/martin")
-    suspend fun test(): String
 
     @GET("/client/liste")
     suspend fun test2(): String
@@ -58,6 +63,11 @@ interface ApiService {
                         val request =
                                 chain.request().newBuilder().addHeader("Accept", "application/json").build()
 
+                        chain.proceed(request)
+                    })
+                    .addInterceptor(Interceptor { chain: Interceptor.Chain ->
+                        val request =
+                                chain.request().newBuilder().addHeader("Authorization", LocalPreferences.getInstance(MyApp.context!!).getToken().toString()).build()
                         chain.proceed(request)
                     })
                     .build()
