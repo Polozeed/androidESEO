@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.app
 
 import android.app.Application
 import android.content.Context

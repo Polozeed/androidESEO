@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fonctions
 
 import android.content.Context
 import android.content.Intent
@@ -7,10 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS
 import android.provider.Settings.ACTION_SETTINGS
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
-import com.example.androideseo.data.AdapterParam
+import com.example.androideseo.adapter.AdapterParam
 import com.example.androideseo.databinding.ActivityParametreBinding
 
 class ParametreActivity : AppCompatActivity() {

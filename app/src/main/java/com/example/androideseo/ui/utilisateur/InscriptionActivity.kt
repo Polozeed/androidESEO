@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.utilisateur
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,7 @@ import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityInscriptionBinding
 
 import com.example.androideseo.service.ServiceClient
+import com.example.androideseo.ui.app.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

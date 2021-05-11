@@ -1,10 +1,6 @@
 package com.example.androideseo.service
 
-import android.text.Editable
-import com.example.androideseo.data.LocalPreferences
-import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.Information
-import com.example.androideseo.ui.MyApp
 import com.google.gson.annotations.SerializedName
 
 class ServiceInformation {

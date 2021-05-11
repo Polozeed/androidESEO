@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

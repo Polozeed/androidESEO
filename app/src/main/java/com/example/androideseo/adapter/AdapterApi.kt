@@ -1,4 +1,4 @@
-package com.example.androideseo.data
+package com.example.androideseo.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.recyclical.datasource.DataSource
 import com.example.androideseo.R
-import com.example.androideseo.ui.ConnexionActivity
+import com.example.androideseo.ui.utilisateur.ConnexionActivity
 
 
 class AdapterApi(private val res: DataSource<Any>) : RecyclerView.Adapter<AdapterApi.ViewHolder>() {

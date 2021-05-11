@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fonctions
 
 
 import android.content.Context
@@ -8,14 +8,12 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
-import com.example.androideseo.data.AdapterSensor
+import com.example.androideseo.adapter.AdapterSensor
 import com.example.androideseo.databinding.ActivitySensorBinding
-import com.example.androideseo.service.ServiceClient
 import com.example.androideseo.service.ServiceInformation
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

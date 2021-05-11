@@ -1,4 +1,4 @@
-package com.example.androideseo.data
+package com.example.androideseo.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androideseo.ui.ParametreActivity
+import com.example.androideseo.ui.fonctions.ParametreActivity
 import com.example.androideseo.R
 
 class AdapterParam(private val deviceList: Array<ParametreActivity.SettingsItem>, private val onClick: ((selectedDevice: ParametreActivity.SettingsItem) -> Unit)? = null) : RecyclerView.Adapter<AdapterParam.ViewHolder>() {

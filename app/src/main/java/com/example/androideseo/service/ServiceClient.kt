@@ -1,11 +1,10 @@
 package com.example.androideseo.service
 
 import android.text.Editable
-import android.util.Patterns
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.LocalUser
-import com.example.androideseo.ui.MyApp
+import com.example.androideseo.ui.app.MyApp
 import com.google.gson.annotations.SerializedName
 
 

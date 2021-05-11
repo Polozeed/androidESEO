@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fonctions
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
-import com.example.androideseo.data.Adapter
+import com.example.androideseo.adapter.Adapter
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityRecyclerBinding
 

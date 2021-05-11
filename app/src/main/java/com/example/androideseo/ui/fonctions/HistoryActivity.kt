@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fonctions
 
 
 import android.content.Context
@@ -7,9 +7,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
-import com.example.androideseo.data.AdapterHist
+import com.example.androideseo.adapter.AdapterHist
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityHistoryBinding
+import com.example.androideseo.ui.app.MainActivity
 
 
 class HistoryActivity : AppCompatActivity() {
