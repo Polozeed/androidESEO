@@ -21,6 +21,7 @@
         <activity android:name=".ui.InscriptionActivity" />
         <activity android:name=".ui.ConnexionActivity" />
         <activity android:name=".ui.SensorActivity" />
+        <activity android:name=".ui.ListClientActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.HistoryActivity" />
         <activity

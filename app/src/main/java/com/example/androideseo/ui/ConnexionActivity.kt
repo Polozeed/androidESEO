@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityConnexionBinding
@@ -70,18 +71,8 @@ class ConnexionActivity : AppCompatActivity() {
 
 
         binding.testliste?.setOnClickListener {
-            val user_name = user_name.text;
-            val password = password.text;
-            CoroutineScope(Dispatchers.IO).launch {
-                runCatching {
-                    val res = ServiceClient.instance.test()
-                    runOnUiThread{
-                        Toast.makeText(this@ConnexionActivity, res.size.toString(),
-                                Toast.LENGTH_SHORT).show()
-                        startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
-                    }
-                }
-            }
+            startActivity(ListClientActivity.getStartIntent(this@ConnexionActivity))
+
         }
 
 

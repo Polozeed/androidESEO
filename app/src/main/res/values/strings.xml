@@ -47,6 +47,7 @@
     <string name="reset">reset</string>
     <string name="connexion">connexion</string>
     <string name="inscription">inscription</string>
+    <string name="getData">getdata</string>
 
 
 </resources>

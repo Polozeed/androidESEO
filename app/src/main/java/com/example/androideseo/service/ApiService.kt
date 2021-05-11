@@ -3,6 +3,7 @@ package com.example.androideseo.service
 import com.example.androideseo.BuildConfig
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
+import com.example.androideseo.data.models.remote.User
 import com.example.androideseo.ui.MyApp
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -35,11 +36,16 @@ interface ApiService {
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
 
-    @GET("/api/users/{")
-    suspend fun getUser(@Path("id") id: Int): Client
 
     @GET("/client/liste")
-    suspend fun test2(): String
+    suspend fun getUsers(): List<User>
+
+    @GET("/client/{id}")
+    suspend fun getUser(@Path("id") id: Int): List<User>
+
+
+
+
 
     companion object {
         /**
