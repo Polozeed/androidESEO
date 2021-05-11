@@ -48,6 +48,7 @@
     <string name="connexion">connexion</string>
     <string name="inscription">inscription</string>
     <string name="getData">getdata</string>
+    <string name="apicaca">apicaca</string>
 
 
 </resources>

@@ -1,19 +1,17 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.utilisateur
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityConnexionBinding
-import com.example.androideseo.databinding.ActivityInscriptionBinding
 import com.example.androideseo.service.ServiceClient
-import com.example.androideseo.ui.fragment.ListFragment
+import com.example.androideseo.ui.fragment.client.ListClientActivity
+import com.example.androideseo.ui.app.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -78,6 +76,8 @@ class ConnexionActivity : AppCompatActivity() {
         binding.btnInscription?.setOnClickListener {
             startActivity(InscriptionActivity.getStartIntent(this@ConnexionActivity))
         }
+
+
     }
 
 

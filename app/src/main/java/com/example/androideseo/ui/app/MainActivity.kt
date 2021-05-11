@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.app
 
 import android.app.ActivityOptions
 import android.content.Context
@@ -11,6 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMainBinding
+import com.example.androideseo.ui.fonctions.HistoryActivity
+import com.example.androideseo.ui.fonctions.MapActivity
+import com.example.androideseo.ui.fonctions.ParametreActivity
+import com.example.androideseo.ui.fonctions.SensorActivity
+import com.example.androideseo.ui.utilisateur.ConnexionActivity
 
 
 class MainActivity : AppCompatActivity() {

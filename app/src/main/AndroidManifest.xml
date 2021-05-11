@@ -8,7 +8,7 @@
 
     <application
         android:allowBackup="true"
-        android:name="com.example.androideseo.ui.MyApp"
+        android:name="com.example.androideseo.ui.app.MyApp"
         android:icon="@drawable/app"
         android:label="Les bons plans Angevins ?"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,16 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidESEO">
 
-        <activity android:name=".ui.ParametreActivity"></activity>
-        <activity android:name=".ui.RecyclerActivity" />
-        <activity android:name=".ui.InscriptionActivity" />
-        <activity android:name=".ui.ConnexionActivity" />
-        <activity android:name=".ui.SensorActivity" />
-        <activity android:name=".ui.ListClientActivity" />
-        <activity android:name=".ui.MapActivity" />
-        <activity android:name=".ui.HistoryActivity" />
+        <activity android:name=".ui.fonctions.ParametreActivity"></activity>
+        <activity android:name=".ui.fonctions.RecyclerActivity" />
+        <activity android:name=".ui.utilisateur.InscriptionActivity" />
+        <activity android:name=".ui.utilisateur.ConnexionActivity" />
+        <activity android:name=".ui.fonctions.SensorActivity" />
+        <activity android:name=".ui.fragment.client.ListClientActivity" />
+        <activity android:name=".ui.fonctions.MapActivity" />
+        <activity android:name=".ui.fonctions.HistoryActivity" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.app.SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.app.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fonctions
 
 import android.Manifest
 import android.annotation.SuppressLint

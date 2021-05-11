@@ -5,7 +5,7 @@ import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.Information
 import com.example.androideseo.data.models.remote.User
-import com.example.androideseo.ui.MyApp
+import com.example.androideseo.ui.app.MyApp
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -14,7 +14,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
-import java.util.zip.DataFormatException
 
 
 /**
@@ -39,7 +38,7 @@ interface ApiService {
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
 
-    @GET("/client/liste")
+    @GET("client/liste")
     suspend fun getUsers(): List<User>
 
     @GET("/client/{id}")
@@ -75,7 +74,8 @@ interface ApiService {
                     })
                     .addInterceptor(Interceptor { chain: Interceptor.Chain ->
                         val request =
-                                chain.request().newBuilder().addHeader("Authorization", LocalPreferences.getInstance(MyApp.context!!).getToken().toString()).build()
+                                chain.request().newBuilder().addHeader("Authorization", LocalPreferences.getInstance(
+                                    MyApp.context!!).getToken().toString()).build()
                         chain.proceed(request)
                     })
                     .build()

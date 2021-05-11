@@ -1,4 +1,4 @@
-package com.example.androideseo.ui
+package com.example.androideseo.ui.fragment.client
 
 import android.content.Context
 import android.content.Intent

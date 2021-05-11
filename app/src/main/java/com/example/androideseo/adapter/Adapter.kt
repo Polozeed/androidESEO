@@ -1,4 +1,4 @@
-package com.example.androideseo.data
+package com.example.androideseo.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +7,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androideseo.R
 
-class AdapterHist(private val deviceList: Array<String>, private val onClick: ((selectedDevice: String) -> Unit)? = null) : RecyclerView.Adapter<AdapterHist.ViewHolder>() {
-
+class Adapter(private val deviceList: Array<String>, private val onClick: ((selectedDevice: String) -> Unit)? = null) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun showItem(valueHist: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
-            itemView.findViewById<TextView>(R.id.texthist).text = valueHist
+        fun showItem(value: String, onClick: ((selectedDevice: String) -> Unit)? = null) {
+            itemView.findViewById<TextView>(R.id.title).text = value
             if(onClick != null) {
                 itemView.setOnClickListener {
+                    onClick(value)
                 }
             }
         }
@@ -22,7 +22,7 @@ class AdapterHist(private val deviceList: Array<String>, private val onClick: ((
 
     // Retourne une « vue » / « layout » pour chaque élément de la liste
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.hist, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         return ViewHolder(view)
     }
 
@@ -34,8 +34,5 @@ class AdapterHist(private val deviceList: Array<String>, private val onClick: ((
     override fun getItemCount(): Int {
         return deviceList.size
     }
+
 }
-
-
-
-

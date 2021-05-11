@@ -1,4 +1,4 @@
-package com.example.androideseo.data
+package com.example.androideseo.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androideseo.R
-import com.example.androideseo.ui.SensorActivity
+import com.example.androideseo.ui.fonctions.SensorActivity
 
 class AdapterSensor(private val deviceList: Array<SensorActivity.SettingsItemSensor>) : RecyclerView.Adapter<AdapterSensor.ViewHolder>() {
 
