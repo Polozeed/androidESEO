@@ -18,6 +18,17 @@ class ServiceInformation {
         return api
     }
 
+    suspend fun afficheInfos(): List<Information> {
+        val api = ApiService.instance.getInfos()
+
+        return api
+    }
+
+    suspend fun afficheUneInfo(id_info: Int): Information {
+        val data = ApiService.instance.getUneInfo(id_info)[0]
+        return data
+    }
+
     companion object {
         val instance = build()
 

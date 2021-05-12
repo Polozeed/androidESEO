@@ -44,6 +44,8 @@ interface ApiService {
     @GET("/client/{id}")
     suspend fun getUser(@Path("id") id: Int): List<User>
 
+    @GET("/information/liste")
+    suspend fun getInfos(): List<Information>
 
     @DELETE("client/delete/{id}")
     suspend fun deleteUser(@Path("id") id: Int): String
@@ -53,7 +55,8 @@ interface ApiService {
 
 
 
-
+    @GET("/information/{id_info}")
+    suspend fun getUneInfo(@Path("id_info") id_info: Int): List<Information>
 
     companion object {
         /**

@@ -28,4 +28,28 @@
             android:name="userId"
             app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/FirstFragmentInfo"
+        android:name="com.example.androideseo.ui.fragment.ListInfoFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_infolist">
+
+        <action
+            android:id="@+id/action_FirstFragmentInfo_to_SecondFragmentInfo"
+            app:destination="@id/SecondFragmentInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragmentInfo"
+        android:name="com.example.androideseo.ui.fragment.DetailsInfoFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_infodetails">
+
+        <action
+            android:id="@+id/action_SecondFragmentInfo_to_FirstFragmentInfo"
+            app:destination="@id/FirstFragmentInfo" />
+        <argument
+            android:name="infoId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

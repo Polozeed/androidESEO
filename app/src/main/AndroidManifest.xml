@@ -25,6 +25,7 @@
         <activity android:name=".ui.fragment.client.ListClientActivity" />
         <activity android:name=".ui.fonctions.MapActivity" />
         <activity android:name=".ui.fonctions.HistoryActivity" />
+        <activity android:name=".ui.fragment.HistoriqueInfoActivity" />
         <activity
             android:name=".ui.app.SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">

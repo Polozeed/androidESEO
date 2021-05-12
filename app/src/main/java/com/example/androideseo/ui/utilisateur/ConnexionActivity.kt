@@ -59,7 +59,6 @@ class ConnexionActivity : AppCompatActivity() {
         binding.btnConnection?.setOnClickListener {
             val user_name = user_name.text;
             val password = password.text;
-            findViewById<Button>(R.id.deleteclient)?.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
                     runCatching {
                         val res = ServiceClient.instance.connexion(user_name, password)
@@ -71,7 +70,6 @@ class ConnexionActivity : AppCompatActivity() {
                         }
                     }
                 }
-            }
         }
 
         binding.testliste?.setOnClickListener {

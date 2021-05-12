@@ -1,12 +1,17 @@
 package com.example.androideseo.data.models
 
 data class Information(
-    var luminosite: Long,
-    var proximite: Long,
-    var gravite: Long,
-    var acceleration: Long
+        var id_info : Long,
+        var luminosite: Long,
+        var proximite: Long,
+        var gravite: Long,
+        var acceleration: Long
 ){
+    override fun toString(): String {
+        return super.toString()
+    }
+
     fun identity(): String {
-        return "$luminosite"
+        return "$id_info $luminosite $proximite $gravite $acceleration"
     }
 }

@@ -15,6 +15,7 @@ import com.example.androideseo.R
 import com.example.androideseo.adapter.AdapterSensor
 import com.example.androideseo.databinding.ActivitySensorBinding
 import com.example.androideseo.service.ServiceInformation
+import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,6 +55,9 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             setDisplayShowHomeEnabled(true)
         }
 
+        binding.historique.setOnClickListener {
+            startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
+        }
 
         // Code executé toutes les 20 secondes
         fixedRateTimer("timer",false,0,20000) {
