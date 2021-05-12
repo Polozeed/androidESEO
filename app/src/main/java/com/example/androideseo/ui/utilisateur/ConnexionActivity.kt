@@ -60,27 +60,16 @@ class ConnexionActivity : AppCompatActivity() {
             val user_name = user_name.text;
             val password = password.text;
             findViewById<Button>(R.id.deleteclient)?.setOnClickListener {
-
-                MaterialDialog(this).show {
-                    title(R.string.demandeAutorisation)
-                    message(R.string.demandeLoc)
-                    positiveButton(R.string.ok) {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            runCatching {
-                                val res = ServiceClient.instance.connexion(user_name, password)
-                                LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
-                                runOnUiThread {
-                                    Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
-                                            Toast.LENGTH_SHORT).show()
-                                    startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
-                                }
-                            }
+                CoroutineScope(Dispatchers.IO).launch {
+                    runCatching {
+                        val res = ServiceClient.instance.connexion(user_name, password)
+                        LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
+                        runOnUiThread {
+                            Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
+                                    Toast.LENGTH_SHORT).show()
+                            startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
                         }
                     }
-                    negativeButton(R.string.annuler) {
-
-                    }
-
                 }
             }
         }
