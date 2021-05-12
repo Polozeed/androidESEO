@@ -1,11 +1,17 @@
 package com.example.androideseo.service
 
 import android.text.Editable
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.LocalUser
+import com.example.androideseo.ui.app.MainActivity
 import com.example.androideseo.ui.app.MyApp
 import com.google.gson.annotations.SerializedName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class ServiceClient {
@@ -58,6 +64,18 @@ class ServiceClient {
         val data = ApiService.instance.getUser(userId)[0]
         return LocalUser(data.id_client, data.login, data.mdp, data.token)
     }
+
+    suspend fun deleteUser(userId: Int): String {
+        val data = ApiService.instance.deleteUser(userId)
+        return data
+    }
+
+    suspend fun editUser(userId: Int): LocalUser {
+        val data = ApiService.instance.editUser(userId)[0]
+        return LocalUser(data.id_client, data.login, data.mdp, data.token)
+    }
+
+
 
 
 

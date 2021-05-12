@@ -5,23 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.afollestad.recyclical.datasource.dataSourceTypedOf
-import com.afollestad.recyclical.datasource.emptyDataSource
-import com.afollestad.recyclical.setup
-import com.afollestad.recyclical.withItem
 import com.example.androideseo.R
-import com.example.androideseo.data.LocalPreferences
-import com.example.androideseo.databinding.ActivityConnexionBinding
-import com.example.androideseo.databinding.ActivitySensorBinding
 import com.example.androideseo.service.ServiceClient
-import com.example.androideseo.ui.app.MainActivity
+import com.example.androideseo.ui.app.MyApp
+import com.example.androideseo.ui.fragment.client.ListClientActivity
 
 
 import kotlinx.coroutines.CoroutineScope
@@ -32,15 +23,9 @@ class DetailsFragment : Fragment() {
 
     val args: DetailsFragmentArgs by navArgs()
 
-    private lateinit var binding: ActivityDetailBinding// <-- Référence à notre ViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivitySensorBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-
     }
 
     override fun onCreateView(
@@ -58,6 +43,8 @@ class DetailsFragment : Fragment() {
         getData()
     }
 
+
+
     private fun getData() {
         CoroutineScope(Dispatchers.IO).launch {
             val user = ServiceClient.instance.getUser(args.userId)
@@ -66,25 +53,37 @@ class DetailsFragment : Fragment() {
                     val identity = findViewById<TextView>(R.id.identity)
                     identity.text = user.identity()
 
-                    binding.testdelete?.setOnClickListener {
-                        val user_name = user_name.text;
-                        val password = password.text;
+                    findViewById<Button>(R.id.deleteclient)?.setOnClickListener {
                         CoroutineScope(Dispatchers.IO).launch {
                             runCatching {
-                                val res = ServiceClient.instance.connexion(user_name,password)
-                                LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
-                                runOnUiThread{
-                                    Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
-                                            Toast.LENGTH_SHORT).show()
-                                    startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
-                                }
+                                val res = ServiceClient.instance.deleteUser(args.userId)
                             }
                         }
+                        Toast.makeText(MyApp.context, "Element Supprimé",
+                                Toast.LENGTH_SHORT).show()
+                        startActivity(ListClientActivity.getStartIntent(this.context))
+
+                    }
+
+                    findViewById<Button>(R.id.modifierclient)?.setOnClickListener {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            runCatching {
+                                val res = ServiceClient.instance.editUser(args.userId)
+                            }
+                        }
+                        Toast.makeText(MyApp.context, "Element Supprimé",
+                                Toast.LENGTH_SHORT).show()
+                        startActivity(ListClientActivity.getStartIntent(this.context))
+
+
                     }
                 }
             }
-        }
-    }
+                }
+            }
+
+
+
 
 
     companion object {

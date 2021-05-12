@@ -45,6 +45,13 @@ interface ApiService {
     suspend fun getUser(@Path("id") id: Int): List<User>
 
 
+    @DELETE("client/delete/{id}")
+    suspend fun deleteUser(@Path("id") id: Int): String
+
+    @PUT("client/edit/{id}")
+    suspend fun editUser(@Path("id") id: Int): List<User>
+
+
 
 
 

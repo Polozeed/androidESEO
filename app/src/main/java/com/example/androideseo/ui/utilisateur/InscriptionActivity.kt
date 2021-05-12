@@ -1,6 +1,5 @@
 package com.example.androideseo.ui.utilisateur
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
@@ -27,7 +26,7 @@ class InscriptionActivity : AppCompatActivity() {
 
 
     companion object {
-        fun getStartIntent(context: Context): Intent {
+        fun getStartIntent(context: ConnexionActivity): Intent {
             return Intent(context, InscriptionActivity::class.java)
         }
     }

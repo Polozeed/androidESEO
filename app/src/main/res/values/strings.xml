@@ -49,6 +49,13 @@
     <string name="inscription">inscription</string>
     <string name="getData">getdata</string>
     <string name="apicaca">apicaca</string>
+    <string name="demandeAutorisation">demandeAutorisation</string>
+    <string name="demandeLoc">demandeLoc</string>
+    <string name="ok">ok</string>
+    <string name="annuler">annuler</string>
+    <string name="Supprimer">supp</string>
+    <string name="supp">supprimer</string>
+    <string name="modif">modifier</string>
 
 
 </resources>
