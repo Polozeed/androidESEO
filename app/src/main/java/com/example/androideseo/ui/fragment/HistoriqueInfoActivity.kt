@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.androideseo.R
 
 class HistoriqueInfoActivity : AppCompatActivity() {
@@ -21,4 +22,6 @@ class HistoriqueInfoActivity : AppCompatActivity() {
         ListInfoFragment
         supportFragmentManager.findFragmentById(R.id.nav_host_fragmentinfo) as NavHostFragment?
     }
+
+
 }

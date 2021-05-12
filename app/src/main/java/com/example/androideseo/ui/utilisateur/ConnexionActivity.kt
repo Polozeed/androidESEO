@@ -70,6 +70,7 @@ class ConnexionActivity : AppCompatActivity() {
                         }
                     }
                 }
+            
         }
 
         binding.testliste?.setOnClickListener {

@@ -51,7 +51,7 @@ class ParametreActivity : AppCompatActivity() {
                         "&body=" + Uri.encode("salut c'est moi le prof"))))
 
                 },
-            SettingsItem("Site de l'ESEO", R.drawable.logo) {
+            SettingsItem("Site de l'ESEO", R.drawable.app) {
                 // Action au clique
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://eseo.fr/" )));
             }

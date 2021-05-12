@@ -29,6 +29,7 @@
             app:argType="integer" />
     </fragment>
 
+
     <fragment
         android:id="@+id/FirstFragmentInfo"
         android:name="com.example.androideseo.ui.fragment.ListInfoFragment"
@@ -39,6 +40,8 @@
             android:id="@+id/action_FirstFragmentInfo_to_SecondFragmentInfo"
             app:destination="@id/SecondFragmentInfo" />
     </fragment>
+
+
     <fragment
         android:id="@+id/SecondFragmentInfo"
         android:name="com.example.androideseo.ui.fragment.DetailsInfoFragment"
@@ -52,4 +55,6 @@
             android:name="infoId"
             app:argType="integer" />
     </fragment>
+
+
 </navigation>

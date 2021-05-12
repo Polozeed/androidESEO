@@ -11,7 +11,7 @@
         android:id="@+id/imageparam"
         android:layout_width="45dp"
         android:layout_height="97dp"
-        app:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/app"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="2dp" />
 
