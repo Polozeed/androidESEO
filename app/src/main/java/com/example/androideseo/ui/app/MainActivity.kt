@@ -4,6 +4,8 @@ import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -15,7 +17,9 @@ import com.example.androideseo.ui.fonctions.HistoryActivity
 import com.example.androideseo.ui.fonctions.MapActivity
 import com.example.androideseo.ui.fonctions.ParametreActivity
 import com.example.androideseo.ui.fonctions.SensorActivity
+import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
+import com.google.android.material.navigationrail.NavigationRailView
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             return Intent(context, MainActivity::class.java)
         }
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +81,37 @@ class MainActivity : AppCompatActivity() {
             val options = ActivityOptions.makeScaleUpAnimation(binding.logo, 10, 10, binding.logo!!.getWidth(), binding.logo!!.getHeight())
             startActivity(SensorActivity.getStartIntent(this@MainActivity), options.toBundle())
         }
+
+
+        binding.navigationRail?.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.menu_item_account -> {
+                    startActivity(ConnexionActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                R.id.menu_item_moon -> {
+                    startActivity(ParametreActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                R.id.menu_item_time -> {
+                    startActivity(SensorActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                R.id.menu_item_client -> {
+                    startActivity(ListClientActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                R.id.menu_item_map -> {
+                    startActivity(MapActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                else -> false
+            }
+        }
     };
+
+
+
 }
 
 

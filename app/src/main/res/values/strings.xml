@@ -55,6 +55,9 @@
     <string name="annuler">annuler</string>
     <string name="modif">modif</string>
     <string name="supp">supp</string>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="client">client</string>
+    <string name="sensor">capteur</string>
 
 
 </resources>

@@ -20,7 +20,7 @@
         <activity android:name=".ui.fonctions.RecyclerActivity" />
         <activity android:name=".ui.utilisateur.InscriptionActivity" />
         <activity android:name=".ui.utilisateur.ConnexionActivity" />
-        <activity android:name=".ui.fragment.client.DeleteClientActivity" />
+        <activity android:name=".ui.app.menuActivity" />
         <activity android:name=".ui.fonctions.SensorActivity" />
         <activity android:name=".ui.fragment.client.ListClientActivity" />
         <activity android:name=".ui.fonctions.MapActivity" />
