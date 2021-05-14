@@ -1,5 +1,6 @@
 package com.example.androideseo.service
 
+import android.net.Uri
 import com.example.androideseo.BuildConfig
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
@@ -13,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+import java.io.InputStream
 import java.util.concurrent.TimeUnit
 
 
@@ -21,10 +23,18 @@ import java.util.concurrent.TimeUnit
  */
 interface ApiService {
 
-    data class Post (
-            val user : String,
-            val password : String
+    data class Post(
+        val user: String,
+        val password: String
     )
+
+    @Multipart
+    @POST("/uploadFile")
+    suspend fun upload(@Part filePart: InputStream?): String
+    // You can add other parameters too
+
+    @POST("/uploadFile")
+    suspend fun postPhoto(@Body file: Uri?) : String
 
     @POST("/client/connexion")
     suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
@@ -78,16 +88,21 @@ interface ApiService {
                     .addInterceptor(HttpLoggingInterceptor().setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE))
                     .addInterceptor(Interceptor { chain: Interceptor.Chain ->
                         val request =
-                                chain.request().newBuilder().addHeader("Accept", "application/json").build()
+                            chain.request().newBuilder().addHeader("Accept", "application/json")
+                                .build()
 
                         chain.proceed(request)
                     })
                     .addInterceptor(Interceptor { chain: Interceptor.Chain ->
                         val request =
-                                chain.request().newBuilder().addHeader("Authorization", LocalPreferences.getInstance(
-                                    MyApp.context!!).getToken().toString()).build()
+                            chain.request().newBuilder().addHeader(
+                                "Authorization", LocalPreferences.getInstance(
+                                    MyApp.context!!
+                                ).getToken().toString()
+                            ).build()
                         chain.proceed(request)
                     })
+
                     .build()
 
             return Retrofit.Builder()

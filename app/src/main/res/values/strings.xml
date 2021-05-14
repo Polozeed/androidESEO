@@ -58,6 +58,12 @@
     <string name="menu_principal">Menu Principal</string>
     <string name="client">client</string>
     <string name="sensor">capteur</string>
+    <string name="cancel">annuler</string>
+    <string name="decline">refuser</string>
+    <string name="accept">accepter</string>
+    <string name="messageconnexion">Voulez vous vous connecter a notre API ? </string>
+    <string name="connexiondefaut">cliquer sur incription pour créer un compte </string>
+    <string name="inscriptionmessage">Etes vous sur de vouloir créer un compte avec ces identifiant ?</string>
 
 
 </resources>

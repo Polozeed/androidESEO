@@ -15,6 +15,7 @@ import com.example.androideseo.service.ServiceClient
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.app.MainActivity
 import com.example.androideseo.ui.app.MyApp
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -57,19 +58,31 @@ class ConnexionActivity : AppCompatActivity() {
 
         // set on-click listener
         binding.btnConnection?.setOnClickListener {
-            val user_name = user_name.text;
-            val password = password.text;
-                CoroutineScope(Dispatchers.IO).launch {
-                    runCatching {
-                        val res = ServiceClient.instance.connexion(user_name, password)
-                        LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
-                        runOnUiThread {
-                            Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
+            MaterialAlertDialogBuilder(this@ConnexionActivity)
+                .setTitle(resources.getString(R.string.messageconnexion))
+                .setMessage(resources.getString(R.string.connexiondefaut))
+                .setNeutralButton(resources.getString(R.string.decline)) { dialog, which ->
+                }
+                .setNegativeButton(resources.getString(R.string.inscription)) { dialog, which ->
+                    startActivity(InscriptionActivity.getStartIntent(this@ConnexionActivity))
+                }
+                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    val user_name = user_name.text;
+                    val password = password.text;
+                    CoroutineScope(Dispatchers.IO).launch {
+                        runCatching {
+                            val res = ServiceClient.instance.connexion(user_name, password)
+                            LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
+                            runOnUiThread {
+                                Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
                                     Toast.LENGTH_SHORT).show()
-                            startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
+                                startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
+                            }
                         }
                     }
                 }
+                .show()
+
             
         }
 

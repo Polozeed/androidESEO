@@ -13,12 +13,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMainBinding
+import com.example.androideseo.ui.app.MyApp.Companion.context
 import com.example.androideseo.ui.fonctions.HistoryActivity
 import com.example.androideseo.ui.fonctions.MapActivity
 import com.example.androideseo.ui.fonctions.ParametreActivity
 import com.example.androideseo.ui.fonctions.SensorActivity
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigationrail.NavigationRailView
 
 
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.buttonApi?.setOnClickListener {
-            startActivity(ConnexionActivity.getStartIntent(this@MainActivity))
+            startActivity(PhotoActivity.getStartIntent(this@MainActivity))
         }
 
         binding.logo?.setOnClickListener {
@@ -87,6 +89,7 @@ class MainActivity : AppCompatActivity() {
             when(item.itemId) {
                 R.id.menu_item_account -> {
                     startActivity(ConnexionActivity.getStartIntent(this@MainActivity))
+
                     true
                 }
                 R.id.menu_item_moon -> {
