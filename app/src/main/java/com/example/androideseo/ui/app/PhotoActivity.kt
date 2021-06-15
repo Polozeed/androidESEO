@@ -18,17 +18,21 @@ import com.example.androideseo.service.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.File
 import java.io.InputStream
+import java.net.URI
 
 
 class PhotoActivity : AppCompatActivity() {
+
+
+    // Probleme ligne 114
 
     private val PERMISSION_CODE = 1000;
     private val IMAGE_CAPTURE_CODE = 1001
     var image_uri: Uri? = null
 
-
-    private lateinit var binding: ActivityPhotoBinding // <-- Référence à notre ViewBinding
+    private lateinit var binding: ActivityPhotoBinding
 
     companion object {
         fun getStartIntent(context: Context): Intent {
@@ -40,42 +44,29 @@ class PhotoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo)
 
-
-        System.out.println("je suis apres le on create")
-
-        // --> Indique que l'on utilise le ViewBinding
         binding = ActivityPhotoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //button click
-
         binding.captureBtn?.setOnClickListener {
-            //if system os is Marshmallow or Above, we need to request runtime permission
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 if (checkSelfPermission(Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED ||
                     checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED){
-                    //permission was not enabled
                     val permission = arrayOf(
                         Manifest.permission.CAMERA,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE
                     )
-                    //show popup to request permission
                     requestPermissions(permission, PERMISSION_CODE)
                 }
                 else{
-                    //permission already granted
                     openCamera()
                 }
             }
             else{
-                //system os is < marshmallow
                 openCamera()
             }
         }
-
-
 
     }
 
@@ -103,10 +94,8 @@ class PhotoActivity : AppCompatActivity() {
                 if (grantResults.size > 0 && grantResults[0] ==
                     PackageManager.PERMISSION_GRANTED
                 ) {
-                    //permission from popup was granted
                     openCamera()
                 } else {
-                    //permission from popup was denied
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -115,9 +104,7 @@ class PhotoActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
-            //set image captured to image view
             binding.imageView.setImageURI(image_uri)
             System.out.println("je suis apres le set image")
 
@@ -125,15 +112,12 @@ class PhotoActivity : AppCompatActivity() {
             binding.envoiphoto?.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
                     runCatching {
-                        System.out.println("------------------------------------------------------")
-                        //val inputStream: InputStream? = contentResolver.openInputStream(image_uri)
-                        System.out.println("je suis avant apelle reseau le setOnclick")
-                        //val res = ApiService.instance.upload(inputStream)
-                        System.out.println("je suis apres apelle reseau le setOnclick")
 
+
+                        // ------------------------------------------- Solution non fonctionnel
+                        val image = File(URI(image_uri.toString()))
+                        val res = ApiService.instance.upload(image)
                         runOnUiThread {
-                            System.out.println("je suis avant toast")
-
                             Toast.makeText(
                                 this@PhotoActivity, "envoi en cours",
                                 Toast.LENGTH_LONG
@@ -142,8 +126,6 @@ class PhotoActivity : AppCompatActivity() {
                         }
                     }
                 }
-
-
 
             }
         }

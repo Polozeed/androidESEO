@@ -12,27 +12,19 @@ class ServicePhoto {
     )
 
 
-    suspend fun postPhoto(photo: Uri?): String {
-        val api = ApiService.instance.postPhoto(photo)
-        return api
-    }
+   //suspend fun postPhoto(photo: Uri?): String {
+     //   val api = ApiService.instance.upload(photo)
+       // return api
+    //}
 
 
+    // ompanion object {
+    //    val instance = build()
 
-
-
-
-
-
-
-
-    companion object {
-        val instance = build()
-
-        private fun build(): ServicePhoto {
-            return ServicePhoto()
-        }
-    }
+      //  private fun build(): ServicePhoto {
+        //    return ServicePhoto()
+        //}
+    //}
 
 
 }

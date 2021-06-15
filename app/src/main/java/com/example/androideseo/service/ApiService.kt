@@ -14,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+import java.io.File
 import java.io.InputStream
 import java.util.concurrent.TimeUnit
 
@@ -30,11 +31,10 @@ interface ApiService {
 
     @Multipart
     @POST("/uploadFile")
-    suspend fun upload(@Part filePart: InputStream?): String
+    suspend fun upload(@Part filePart: File?): String
     // You can add other parameters too
 
-    @POST("/uploadFile")
-    suspend fun postPhoto(@Body file: Uri?) : String
+
 
     @POST("/client/connexion")
     suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
