@@ -15,6 +15,7 @@ import com.afollestad.recyclical.withItem
 import com.example.androideseo.R
 import com.example.androideseo.data.models.LocalUser
 import com.example.androideseo.service.ServiceClient
+import com.example.androideseo.ui.app.PhotoActivity
 
 
 import com.example.androideseo.ui.fragment.viewHolder.LocalUserViewHolder

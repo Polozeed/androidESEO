@@ -58,6 +58,14 @@ class MapActivity : AppCompatActivity() {
             this.requestPermission();
         }
 
+        binding.buttonHistorique?.setOnClickListener {
+            if (LocalPreferences.getInstance(this).nullHistory() == 0) {
+                Toast.makeText(this, getString(R.string.histvide), Toast.LENGTH_SHORT).show()
+            }else{
+                startActivity(HistoryActivity.getStartIntent(this@MapActivity))
+            }
+        }
+
         binding.buttonGoogleMap.startAnimation(animationbounce);
         binding.buttonGoogleMap.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));

@@ -64,6 +64,7 @@
     <string name="messageconnexion">Voulez vous vous connecter a notre API ? </string>
     <string name="connexiondefaut">cliquer sur incription pour créer un compte </string>
     <string name="inscriptionmessage">Etes vous sur de vouloir créer un compte avec ces identifiant ?</string>
+    <string name="api">API</string>
 
 
 </resources>
