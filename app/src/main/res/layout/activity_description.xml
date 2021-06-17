@@ -5,22 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="319dp"
-        android:layout_height="528dp"
-        android:text="Salut c''st martin et maxime "
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="82dp" />
-
+        android:layout_width="366dp"
+        android:layout_height="526dp"
+        android:text="Bonjour, \n
+Au cours de ce projet, nous nous sommes principalement concentré sur le devellopement 'back end' de l'application. Les fonctionnalités que nous avons develloper ont été choisi pour leur interet technologique et non fonctionnel. \n \n
+Effectivement, nous avons travaillé avec des fragments pour les listes de donnée, des fonctionnalités de connexion par identification puis par utilisation de token dans les echanges client serveur. \n \n
+Nous avons continuer notre apprentissage sur la partie map, cependant nous voulions pouvoir enregistrer des positions gps et les affichés mais par manque de temps nous avons anbandonné partiellement cette fonctionnalité. \n \n
+Enfin, nous avons essayer de mettre en place un systeme de traitement d'image, celui est fonctionnel d'un point de vu serveur mais en cours de devellopement pour la partie application.   \n \n
+Cordialement  \n \n
+L'équie des apprentis développeur \n \n"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="79dp" />
 
     <Button
         android:id="@+id/btnapi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="jAVA JPA "
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="667dp" />
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="645dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

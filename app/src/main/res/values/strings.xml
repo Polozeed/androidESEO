@@ -14,10 +14,8 @@
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next" translatable="false">Next</string>
     <string name="previous" translatable="false">Previous</string>
-
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
-
     <string name="eseo">Site Eseo</string>
     <string name="map">google map</string>
     <string name="localisation">Me localiser</string>
@@ -71,8 +69,7 @@
     <string name="menu" translatable="false">Menu</string>
     <string name="maxime_pouplain" translatable="false">Maxime Pouplain</string>
     <string name="martin" translatable="false">Martin Courier de Méré</string>
-    <string name="menu">menu</string>
-    <string name="DescriptionAPI">Description API</string>
+    <string name="DescriptionAPI" translatable="false">Description API</string>
 
 
 </resources>

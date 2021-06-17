@@ -7,11 +7,39 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="261dp"
-        android:layout_height="221dp"
-        android:text="Salut c''st martin et maxime "
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="82dp" />
+        android:layout_width="387dp"
+        android:layout_height="678dp"
+        android:text="
+Pour ce qui est de la partie API, nous avons travaillé avec spring boot, JPA reposant sur un serveur local communiquant avec une base de donnée MySQL.  \n  \n
+
+Cette partie du projet a été effectué rapidement par nos soins et apporte de nombreuses fonctionnalités tel que la sauvegarde d'information, de client, ansi que l'enregistrement des echanges entre le serveur et l'application. Enfin nous avons travaillé afin de sauvegarder des images en base et de pouvoir en faire l'administation a partir de notre API. \n  \n
+
+Ci dessous vous retrouverez l'ensemble des fonctionnalités supporter par notre API. Toutes ces informations sont retrouvables dans la javadoc fournie avec ce projet. \n  \n
+
+Client Controlleur :\n
+	 GET : client par id,login, List Client \n
+	 POST : nouveau client\n
+	 PUT : modification client\n
+	 DELETE : client, List Client \n \n
+
+Historique  Api Controlleur :\n
+	 GET : historique par id,client, List Historique \n
+	 POST : nouveau historique\n
+	 DELETE : historique, List Historique \n \n
+
+Information Controlleur :\n
+	 GET : information par id, List Information\n
+	 POST : nouveau information\n
+	 PUT : modification information\n
+	 DELETE : information, List Information \n  \n
+
+Images Controlleur :\n
+	 GET : image par id, List Image \n
+	 POST : nouveau image \n
+	 DELETE : image, List Image \n
+"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="27dp" />
 
 
 
