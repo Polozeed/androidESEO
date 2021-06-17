@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.androideseo.R
+import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMainBinding
 import com.example.androideseo.ui.fonctions.MapActivity
 import com.example.androideseo.ui.fonctions.ParametreActivity
@@ -108,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(DescriptionActivity.getStartIntent(this@MainActivity))
                     true
                 }
+
                 else -> false
             }
         }

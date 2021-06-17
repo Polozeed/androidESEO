@@ -24,6 +24,7 @@
         <activity android:name=".ui.utilisateur.ConnexionActivity" />
         <activity android:name=".ui.app.PhotoActivity" />
         <activity android:name=".ui.app.DescriptionActivity" />
+        <activity android:name=".ui.app.DescriptionAPIActivity" />
         <activity android:name=".ui.fonctions.SensorActivity" />
         <activity android:name=".ui.fragment.client.ListClientActivity" />
         <activity android:name=".ui.fonctions.MapActivity" />

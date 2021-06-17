@@ -44,16 +44,16 @@ class ParametreActivity : AppCompatActivity() {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:47.492884574915365,-0.5509639806591626")));
 
             },
-            SettingsItem("Mail Etudiant", R.drawable.email) {
+            SettingsItem("Contacter nous", R.drawable.email) {
                 // Action au clique
                 startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:martincourierdemere@gmail.com " +
-                        "?subject=" + Uri.encode("je test ton App Trop Cool") +
-                        "&body=" + Uri.encode("salut c'est moi le prof"))))
+                        "?subject=" + Uri.encode("Indiquer le sujet de la demande") +
+                        "&body=" + Uri.encode("Merci d'indiquer vos coordonnées afin que nous puissions revenir vers vous "))))
 
                 },
-            SettingsItem("Site de l'ESEO", R.drawable.app) {
+            SettingsItem("Ville d'Angers", R.drawable.app) {
                 // Action au clique
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://eseo.fr/" )));
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.angers.fr/" )));
             }
 
         )

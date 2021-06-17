@@ -7,9 +7,20 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="261dp"
-        android:layout_height="221dp"
+        android:layout_width="319dp"
+        android:layout_height="528dp"
         android:text="Salut c''st martin et maxime "
         tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="82dp" />
+
+
+    <Button
+        android:id="@+id/btnapi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="jAVA JPA "
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="667dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

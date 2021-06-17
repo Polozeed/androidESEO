@@ -70,6 +70,8 @@
     <string name="modifierMdp" translatable="false">modifier Mdp</string>
     <string name="Photo" translatable="false">photo</string>
     <string name="Description">Description</string>
+    <string name="menu">menu</string>
+    <string name="DescriptionAPI">Description API</string>
 
 
 </resources>
