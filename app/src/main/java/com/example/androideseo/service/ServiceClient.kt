@@ -1,17 +1,11 @@
 package com.example.androideseo.service
 
 import android.text.Editable
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.LocalUser
-import com.example.androideseo.ui.app.MainActivity
 import com.example.androideseo.ui.app.MyApp
 import com.google.gson.annotations.SerializedName
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class ServiceClient {
@@ -70,8 +64,10 @@ class ServiceClient {
         return data
     }
 
-    suspend fun editUser(userId: Int): LocalUser {
-        val data = ApiService.instance.editUser(userId)[0]
+    suspend fun editUser(userId: Int, userData: LocalUser): LocalUser {
+        val user = UserInfo(userData.mdp,userData.login)
+        val data = ApiService.instance.editUser(userId,user)[0]
+        System.out.println(data.toString())
         return LocalUser(data.id_client, data.login, data.mdp, data.token)
     }
 

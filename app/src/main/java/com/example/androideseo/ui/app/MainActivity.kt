@@ -18,6 +18,7 @@ import com.example.androideseo.ui.fonctions.HistoryActivity
 import com.example.androideseo.ui.fonctions.MapActivity
 import com.example.androideseo.ui.fonctions.ParametreActivity
 import com.example.androideseo.ui.fonctions.SensorActivity
+import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -73,11 +74,21 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_item_client -> {
-                    startActivity(ListClientActivity.getStartIntent(this@MainActivity))
+                    if (LocalPreferences.getInstance(this@MainActivity).nullToken() == 1) {
+                        startActivity(ListClientActivity.getStartIntent(this@MainActivity))
+
+                    } else
+                        Toast.makeText(this@MainActivity,"Veuillez vous connecter pour acceder a cette page",Toast.LENGTH_LONG).show()
+
                     true
                 }
                 R.id.menu_item_map -> {
                     startActivity(MapActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+
+                R.id.menu_item_photo -> {
+                    startActivity(PhotoActivity.getStartIntent(this@MainActivity))
                     true
                 }
                 else -> false

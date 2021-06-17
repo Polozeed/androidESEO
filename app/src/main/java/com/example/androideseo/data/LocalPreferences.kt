@@ -23,19 +23,26 @@ class LocalPreferences private constructor(context: Context) {
     }
 
 
-    // Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
     fun addTokenToHistory(newEntry: String){
         sharedPreferences.edit().putString("token",newEntry).apply()
     }
 
-    // Fct permettant de recupérer les adresses sauvegardés
+
     fun getToken(): String? {
         return sharedPreferences.getString("token", String())
     }
 
-    // Fct permettant de supprimer les adresses
+
     fun deleteToken() {
         sharedPreferences.edit().putString("token",null).apply()
+    }
+
+    fun nullToken(): Int {
+        var res = sharedPreferences.getString("token",String())?.isEmpty();
+        if (res != true) {
+            return 1
+        } else
+            return 0
     }
 
 

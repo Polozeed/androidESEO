@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
 import com.example.androideseo.adapter.AdapterSensor
+import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivitySensorBinding
 import com.example.androideseo.service.ServiceInformation
 import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
@@ -26,6 +27,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var binding: ActivitySensorBinding // <-- Référence à notre ViewBinding
     private lateinit var sensorManager: SensorManager
+    private var result: String = ""
 
     private val arr = arrayOf(
             SettingsItemSensor("Luminosité", 0.0f, R.drawable.light),
@@ -50,13 +52,36 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         setContentView(binding.root)
 
         supportActionBar?.apply {
-            setTitle("capteur")
+            setTitle("Informations Capteurs")
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
 
         binding.historique.setOnClickListener {
-            startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
+            if (LocalPreferences.getInstance(this@SensorActivity).nullToken() == 1) {
+                startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
+            } else
+                Toast.makeText(this@SensorActivity,"Veuillez vous connecter pour acceder a cette page",Toast.LENGTH_LONG).show()
+
+
+        }
+
+        binding.enregisterSensor.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                runCatching {
+                    val info = ServiceInformation.EnregInfo(
+                            luminosite = arr[0].value.toLong(),
+                            proximite = arr[1].value.toLong(),
+                            gravite = arr[2].value.toLong(),
+                            acceleration = arr[3].value.toLong()
+                    )
+                    val res = ServiceInformation.instance.enregInfo(info)
+                    result = res.identity()
+
+                }
+            }
+            Toast.makeText(this@SensorActivity,result,Toast.LENGTH_LONG).show()
+
         }
 
         // Code executé toutes les 20 secondes
@@ -70,8 +95,10 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
                                 gravite = arr[2].value.toLong(),
                                 acceleration = arr[3].value.toLong()
                         )
-                        val res = ServiceInformation.instance.enregInfo(info)
+                        val result = ServiceInformation.instance.enregInfo(info)
                     }
+
+
                 }
             //}
         }
@@ -94,8 +121,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             Sensor.TYPE_LINEAR_ACCELERATION-> arr[3].value = event.values[2]
             else ->  Toast.makeText(this, "Capteurs inexistants", Toast.LENGTH_SHORT).show()
         }
-        //println("------------------------ type :" + event.sensor.type)
-        //println("------------------------ type :" + event.values[0])
+
         binding.sensorList.adapter?.notifyDataSetChanged()
     }
 
@@ -118,4 +144,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY))
         sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION))
     }
+
+
+
 }

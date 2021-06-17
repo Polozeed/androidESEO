@@ -26,7 +26,7 @@ import java.net.URI
 class PhotoActivity : AppCompatActivity() {
 
 
-    // Probleme ligne 114
+    // Probleme ligne 114 avec l'utilisation du @Multipart
 
     private val PERMISSION_CODE = 1000;
     private val IMAGE_CAPTURE_CODE = 1001
@@ -104,17 +104,18 @@ class PhotoActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (resultCode == Activity.RESULT_OK){
             binding.imageView.setImageURI(image_uri)
-            System.out.println("je suis apres le set image")
-
 
             binding.envoiphoto?.setOnClickListener {
+                Toast.makeText(
+                        this@PhotoActivity, "Fonctionnalité en cours de creation (probleme coté client)", Toast.LENGTH_LONG).show()
+
                 CoroutineScope(Dispatchers.IO).launch {
                     runCatching {
 
-
-                        // ------------------------------------------- Solution non fonctionnel
+                        // --------- Solution non fonctionnel -------------------------
                         val image = File(URI(image_uri.toString()))
                         val res = ApiService.instance.upload(image)
                         runOnUiThread {

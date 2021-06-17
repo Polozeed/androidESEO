@@ -24,6 +24,11 @@ class ServiceInformation {
         return api
     }
 
+    suspend fun deleteInfo(infoId: Int): String {
+        val data = ApiService.instance.deleteInfo(infoId)
+        return data
+    }
+
     suspend fun afficheUneInfo(id_info: Int): Information {
         val data = ApiService.instance.getUneInfo(id_info)[0]
         return data

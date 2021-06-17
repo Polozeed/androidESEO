@@ -6,16 +6,30 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/identity"
+        android:id="@+id/identity_user"
         android:layout_width="224dp"
         android:layout_height="36dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
         app:layout_constraintEnd_toStartOf="@id/avatar"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintVertical_bias="0.234"
         tools:text="Nom Prénom" />
+
+    <TextView
+        android:id="@+id/identity_password"
+        android:layout_width="224dp"
+        android:layout_height="36dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintEnd_toStartOf="@id/avatar"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="password" />
 
     <ImageView
         android:id="@+id/avatar"
@@ -29,26 +43,38 @@
 
     <Button
         android:id="@+id/deleteclient"
-        android:layout_width="88dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="140dp"
+        android:layout_width="117dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="88dp"
         android:text="@string/supp"
-        android:textSize="18px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
-
-    <Button
-        android:id="@+id/modifierclient"
-        android:layout_width="88dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="140dp"
-        android:text="@string/modif"
-        android:textSize="18px"
+        android:textSize="15px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.297" />
+
+    <Button
+        android:id="@+id/modifierclient"
+        android:layout_width="117dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="88dp"
+        android:text="@string/modif"
+        android:textSize="16px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <Button
+        android:id="@+id/modifiermdp"
+        android:layout_width="113dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="92dp"
+        android:text="@string/modifierMdp"
+        android:textSize="16px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

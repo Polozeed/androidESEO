@@ -5,6 +5,7 @@ import com.example.androideseo.BuildConfig
 import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.data.models.Client
 import com.example.androideseo.data.models.Information
+import com.example.androideseo.data.models.LocalUser
 import com.example.androideseo.data.models.remote.User
 import com.example.androideseo.ui.app.MyApp
 import com.google.gson.GsonBuilder
@@ -45,6 +46,9 @@ interface ApiService {
     @POST("/information/new")
     suspend fun postinformation(@Body infoData: ServiceInformation.EnregInfo) : Information
 
+    @DELETE("information/delete/{id}")
+    suspend fun deleteInfo(@Path("id") id: Int): String
+
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
 
@@ -61,7 +65,7 @@ interface ApiService {
     suspend fun deleteUser(@Path("id") id: Int): String
 
     @PUT("client/edit/{id}")
-    suspend fun editUser(@Path("id") id: Int): List<User>
+    suspend fun editUser(@Path("id") id: Int,@Body userData: ServiceClient.UserInfo): List<User>
 
 
 

@@ -16,4 +16,12 @@ data class Client (
     fun identity(): String {
         return "$user $password $token"
     }
+
+    fun identity_USER(): String {
+        return "$user"
+    }
+
+    fun identity_PASSWORD(): String {
+        return "$user"
+    }
 }

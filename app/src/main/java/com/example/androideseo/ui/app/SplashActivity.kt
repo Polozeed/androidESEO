@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.androideseo.R
+import com.example.androideseo.data.LocalPreferences
 
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        LocalPreferences.getInstance(MyApp.context!!).deleteToken()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 

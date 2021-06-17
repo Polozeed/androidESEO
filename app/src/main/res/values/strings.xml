@@ -3,36 +3,36 @@
     <string name="splash">"Maxime Pouplain /Martin Courier de Méré / A2 / 2021 "</string>
     <string name="retard"> Les bons plans Angevins ?</string>
     <string name="Historique">historique</string>
-    <string name="hello_eseo">Hello Eseo!</string>
-    <string name="troll">troll</string>
-    <string name="radiobutton">RadioButton</string>
-    <string name="testToast">hello la team eseo</string>
-    <string name="bonjour_eseo">Bonjour Eseo</string>
-    <string name="normal">Normal</string>
-    <string name="yes">oui</string>
-    <string name="title_activity_splash">SplashActivity1</string>
+    <string name="hello_eseo" translatable="false">Hello Eseo!</string>
+    <string name="troll" translatable="false">troll</string>
+    <string name="radiobutton" translatable="false">RadioButton</string>
+    <string name="testToast" translatable="false">hello la team eseo</string>
+    <string name="bonjour_eseo" translatable="false">Bonjour Eseo</string>
+    <string name="normal" translatable="false">Normal</string>
+    <string name="yes" translatable="false">oui</string>
+    <string name="title_activity_splash" translatable="false">SplashActivity1</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 
     <string name="eseo">Site Eseo</string>
     <string name="map">google map</string>
     <string name="localisation">Me localiser</string>
     <string name="goGoogleMap">Voir sur google map</string>
-    <string name="Recycle">recycle</string>
+    <string name="Recycle" translatable="false">recycle</string>
     <string name="whatever">retour</string>
     <string name="retour">retour</string>
     <string name="parametre">parametre</string>
     <string name="w">Parametre</string>
-    <string name="pageLocalisation">pageLocation</string>
+    <string name="pageLocalisation" translatable="false">pageLocation</string>
     <string name="Localisation">localisation</string>
     <string name="ajoutAdresse">Ajouter adresse Historique</string>
-    <string name="espace" />
+    <string name="espace" translatable="false" />
     <string name="suppAllHist">Supprimer Historique</string>
     <string name="splash2">Projet Android</string>
     <string name="easter">Si vous etes ici vous avez gagner le droit de me mettre un 18/20 à ce projet !
@@ -42,29 +42,33 @@
     <string name="histvide">Historique Vide</string>
     <string name="activitymap">Activité Map</string>
     <string name="textacceptPerm">Pour vous localiser merci d\'accepter le parametre précedant</string>
-    <string name="luminosite">luminosite</string>
-    <string name="login">login</string>
-    <string name="reset">reset</string>
-    <string name="connexion">connexion</string>
-    <string name="inscription">inscription</string>
-    <string name="getData">getdata</string>
-    <string name="apicaca">apicaca</string>
-    <string name="demandeAutorisation">Demande autorisation</string>
-    <string name="demandeLoc">demande localisation</string>
-    <string name="ok">ok</string>
-    <string name="annuler">annuler</string>
-    <string name="modif">modif</string>
-    <string name="supp">supp</string>
-    <string name="menu_principal">Menu Principal</string>
-    <string name="client">client</string>
-    <string name="sensor">capteur</string>
-    <string name="cancel">annuler</string>
-    <string name="decline">refuser</string>
-    <string name="accept">accepter</string>
-    <string name="messageconnexion">Voulez vous vous connecter a notre API ? </string>
-    <string name="connexiondefaut">cliquer sur incription pour créer un compte </string>
-    <string name="inscriptionmessage">Etes vous sur de vouloir créer un compte avec ces identifiant ?</string>
-    <string name="api">API</string>
+    <string name="luminosite" translatable="false">luminosite</string>
+    <string name="login" translatable="false">login</string>
+    <string name="reset" translatable="false">reset</string>
+    <string name="connexion" translatable="false">connexion</string>
+    <string name="inscription" translatable="false">inscription</string>
+    <string name="getData" translatable="false">getdata</string>
+    <string name="apicaca" translatable="false">apicaca</string>
+    <string name="demandeAutorisation" translatable="false">Demande autorisation</string>
+    <string name="demandeLoc" translatable="false">demande localisation</string>
+    <string name="ok" translatable="false">ok</string>
+    <string name="annuler" translatable="false">annuler</string>
+    <string name="modif" translatable="false">modifier identifiant</string>
+    <string name="supp" translatable="false">supprimer élément</string>
+    <string name="menu_principal" translatable="false">Menu Principal</string>
+    <string name="client" translatable="false">client</string>
+    <string name="sensor" translatable="false">capteur</string>
+    <string name="cancel" translatable="false">annuler</string>
+    <string name="decline" translatable="false">refuser</string>
+    <string name="accept" translatable="false">accepter</string>
+    <string name="messageconnexion" translatable="false">Voulez vous vous connecter a notre API ? </string>
+    <string name="connexiondefaut" translatable="false">cliquer sur incription pour créer un compte </string>
+    <string name="inscriptionmessage" translatable="false">Etes vous sur de vouloir créer un compte avec ces identifiant ?</string>
+    <string name="Enregistrer" translatable="false">enregistrer</string>
+    <string name="api" translatable="false">api</string>
+    <string name="supprimer" translatable="false">supprimer</string>
+    <string name="modifierMdp" translatable="false">modifier Mdp</string>
+    <string name="Photo" translatable="false">photo</string>
 
 
 </resources>

@@ -36,6 +36,8 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
@@ -69,6 +71,15 @@ class MapActivity : AppCompatActivity() {
         binding.buttonGoogleMap.startAnimation(animationbounce);
         binding.buttonGoogleMap.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
+        }
+
+
+        binding.buttonhist?.setOnClickListener {
+            if (LocalPreferences.getInstance(this).nullHistory() == 0) {
+                Toast.makeText(this, getString(R.string.histvide), Toast.LENGTH_SHORT).show()
+            }else{
+                startActivity(HistoryActivity.getStartIntent(this))
+            }
         }
     }
 
@@ -128,11 +139,8 @@ class MapActivity : AppCompatActivity() {
         val results = geocoder.getFromLocation(location.latitude, location.longitude, 1)
         val locationText = findViewById<TextView>(R.id.textMap)
         if (results.isNotEmpty()) {
-            val distance = FloatArray(1)
-            android.location.Location.distanceBetween(lateseo, longeseo, location.latitude, location.longitude,distance)
-            distance[0] = distance[0] / 1000;           // Conversion en km
-            Toast.makeText(this@MapActivity,"Distance vers l'ESEO:  " + distance[0].toString() + "  en kms",Toast.LENGTH_LONG).show()
             locationText.text = results[0].getAddressLine(0)
+            Toast.makeText(this@MapActivity,results[0].getAddressLine(0),Toast.LENGTH_LONG).show()
             LocalPreferences.getInstance(this).addToHistory(locationText.text.toString())
 
         }

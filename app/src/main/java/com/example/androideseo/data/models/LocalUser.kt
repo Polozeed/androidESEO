@@ -10,4 +10,12 @@ data class LocalUser(
     fun identity(): String {
         return "$login $mdp"
     }
+
+    fun identity_user(): String {
+        return "$login $mdp"
+    }
+
+    fun identity_password(): String {
+        return "$login $mdp"
+    }
 }

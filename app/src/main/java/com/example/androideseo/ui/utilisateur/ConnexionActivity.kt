@@ -86,9 +86,7 @@ class ConnexionActivity : AppCompatActivity() {
             
         }
 
-        binding.testliste?.setOnClickListener {
-            startActivity(ListClientActivity.getStartIntent(this@ConnexionActivity))
-        }
+
 
         binding.btnInscription?.setOnClickListener {
             startActivity(InscriptionActivity.getStartIntent(this@ConnexionActivity))
