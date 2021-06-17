@@ -46,7 +46,7 @@ class MapActivity : AppCompatActivity() {
                 R.anim.bounce_animation)
 
         supportActionBar?.apply {
-            setTitle(getString(R.string.activitymap))
+            setTitle(getString(R.string.map))
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -74,6 +74,11 @@ class MapActivity : AppCompatActivity() {
                 startActivity(HistoryActivity.getStartIntent(this))
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun hasPermission(): Boolean {

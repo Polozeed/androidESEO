@@ -18,8 +18,6 @@ import kotlinx.coroutines.launch
 
 class ListClientActivity  : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHistoryBinding // <-- Référence à notre ViewBinding
-
     companion object {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, ListClientActivity::class.java)
@@ -33,6 +31,17 @@ class ListClientActivity  : AppCompatActivity() {
         setContentView(R.layout.activity_listclient)
         ListFragment
         supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
+
+        supportActionBar?.apply {
+            setTitle(R.string.client)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
 

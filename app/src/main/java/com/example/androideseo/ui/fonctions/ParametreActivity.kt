@@ -64,7 +64,7 @@ class ParametreActivity : AppCompatActivity() {
         binding.parametre.adapter = AdapterParam(arr)
 
         supportActionBar?.apply {
-            setTitle(R.string.w)
+            setTitle(R.string.parametre)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }

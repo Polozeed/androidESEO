@@ -21,7 +21,17 @@ class HistoriqueInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_historique_info)
         ListInfoFragment
         supportFragmentManager.findFragmentById(R.id.nav_host_fragmentinfo) as NavHostFragment?
+
+        supportActionBar?.apply {
+            setTitle(R.string.sensor)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
 
 }

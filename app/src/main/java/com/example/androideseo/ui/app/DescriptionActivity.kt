@@ -28,7 +28,7 @@ class DescriptionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.apply {
-            setTitle("A propos")
+            setTitle(R.string.Description)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -44,5 +44,8 @@ class DescriptionActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
 }

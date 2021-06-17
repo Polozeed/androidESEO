@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(ListClientActivity.getStartIntent(this@MainActivity))
 
                     } else
-                        Toast.makeText(this@MainActivity,"Veuillez vous connecter pour acceder a cette page",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity,"Veuillez vous connecter pour accéder à cette page",Toast.LENGTH_LONG).show()
 
                     true
                 }

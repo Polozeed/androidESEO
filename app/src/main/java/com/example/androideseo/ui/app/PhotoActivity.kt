@@ -68,6 +68,17 @@ class PhotoActivity : AppCompatActivity() {
             }
         }
 
+        supportActionBar?.apply {
+            setTitle(R.string.Photo)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun openCamera() {

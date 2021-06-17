@@ -52,7 +52,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         setContentView(binding.root)
 
         supportActionBar?.apply {
-            setTitle("Informations Capteurs")
+            setTitle(R.string.sensor)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -61,7 +61,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             if (LocalPreferences.getInstance(this@SensorActivity).nullToken() == 1) {
                 startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
             } else
-                Toast.makeText(this@SensorActivity,"Veuillez vous connecter pour acceder a cette page",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@SensorActivity,"Veuillez vous connecter pour accéder à cette page",Toast.LENGTH_LONG).show()
 
 
         }

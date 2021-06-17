@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Developpeur Junior</string>
+    <string name="app_name">Développeurs Juniors</string>
     <string name="Historique">historique</string>
     <string name="hello_eseo" translatable="false">Hello Eseo!</string>
     <string name="troll" translatable="false">troll</string>
@@ -14,17 +14,17 @@
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next" translatable="false">Next</string>
     <string name="previous" translatable="false">Previous</string>
+
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+
     <string name="eseo">Site Eseo</string>
-    <string name="map">google map</string>
+    <string name="map">Localisation</string>
     <string name="localisation">Me localiser</string>
     <string name="goGoogleMap">Voir sur google map</string>
     <string name="Recycle" translatable="false">recycle</string>
-    <string name="whatever">retour</string>
     <string name="retour">retour</string>
-    <string name="parametre">parametre</string>
-    <string name="w">Parametre</string>
+    <string name="parametre">Paramètres</string>
     <string name="pageLocalisation" translatable="false">pageLocation</string>
     <string name="Localisation">localisation</string>
     <string name="ajoutAdresse">Ajouter adresse Historique</string>
@@ -36,40 +36,38 @@
     <string name="trollpage">Troll Page</string>
     <string name="histTitle">Historique des localisations</string>
     <string name="histvide">Historique Vide</string>
-    <string name="activitymap">Activité Map</string>
-    <string name="textacceptPerm">Pour vous localiser merci d\'accepter le parametre précedant</string>
-    <string name="luminosite" translatable="false">luminosite</string>
-    <string name="login" translatable="false">login</string>
-    <string name="reset" translatable="false">reset</string>
-    <string name="connexion" translatable="false">connexion</string>
-    <string name="inscription" translatable="false">inscription</string>
-    <string name="getData" translatable="false">getdata</string>
-    <string name="apicaca" translatable="false">apicaca</string>
-    <string name="demandeAutorisation" translatable="false">Demande autorisation</string>
-    <string name="demandeLoc" translatable="false">demande localisation</string>
-    <string name="ok" translatable="false">ok</string>
-    <string name="annuler" translatable="false">annuler</string>
-    <string name="modif" translatable="false">modifier identifiant</string>
-    <string name="supp" translatable="false">supprimer élément</string>
+    <string name="textacceptPerm">Pour vous localiser merci d\'accepter le paramètre précédent</string>
+    <string name="luminosite" translatable="false">Luminosite</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="reset" translatable="false">Reset</string>
+    <string name="connexion" translatable="false">Connexion</string>
+    <string name="inscription" translatable="false">Inscription</string>
+    <string name="demandeAutorisation" translatable="false">Demande d\'autorisation</string>
+    <string name="demandeLoc" translatable="false">Demande de localisation</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="annuler" translatable="false">Annuler</string>
+    <string name="modif" translatable="false">Modifier identifiant</string>
+    <string name="supp" translatable="false">Supprimer élément</string>
     <string name="menu_principal" translatable="false">Menu Principal</string>
-    <string name="client" translatable="false">client</string>
-    <string name="sensor" translatable="false">capteur</string>
-    <string name="cancel" translatable="false">annuler</string>
-    <string name="decline" translatable="false">refuser</string>
-    <string name="accept" translatable="false">accepter</string>
-    <string name="messageconnexion" translatable="false">Voulez vous vous connecter a notre API ? </string>
-    <string name="connexiondefaut" translatable="false">cliquer sur incription pour créer un compte </string>
-    <string name="inscriptionmessage" translatable="false">Etes vous sur de vouloir créer un compte avec ces identifiant ?</string>
-    <string name="Enregistrer" translatable="false">enregistrer</string>
+    <string name="client" translatable="false">Clients</string>
+    <string name="sensor" translatable="false">Capteurs</string>
+    <string name="decline" translatable="false">Refuser</string>
+    <string name="accept" translatable="false">Accepter</string>
+    <string name="messageconnexion" translatable="false">Voulez-vous vous connecter à notre API ? </string>
+    <string name="connexiondefaut" translatable="false">Cliquer sur incription pour créer un compte </string>
+    <string name="inscriptionmessage" translatable="false">Êtes-vous sur de vouloir créer un compte avec ces identifiants ?</string>
+    <string name="Enregistrer" translatable="false">Enregistrer</string>
     <string name="api" translatable="false">api</string>
-    <string name="supprimer" translatable="false">supprimer</string>
-    <string name="modifierMdp" translatable="false">modifier Mdp</string>
-    <string name="Photo" translatable="false">photo</string>
-    <string name="Description" translatable="false">Description</string>
+    <string name="supprimer" translatable="false">Supprimer</string>
+    <string name="modifierMdp" translatable="false">Modifier mot de passe</string>
+    <string name="Photo" translatable="false">Prendre une photo</string>
+    <string name="Description" translatable="false">À propos</string>
     <string name="menu" translatable="false">Menu</string>
     <string name="maxime_pouplain" translatable="false">Maxime Pouplain</string>
     <string name="martin" translatable="false">Martin Courier de Méré</string>
     <string name="DescriptionAPI" translatable="false">Description API</string>
+    <string name="obtenir_les_donn_es" translatable="false">Obtenir les données</string>
+    <string name="description_appli">Description Appli</string>
 
 
 </resources>

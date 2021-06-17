@@ -12,14 +12,13 @@
         android:allowBackup="true"
         android:name="com.example.androideseo.ui.app.MyApp"
         android:icon="@mipmap/ic_launcher_foreground"
-        android:label="Developpeur Junior"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_foreground"
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidESEO">
 
         <activity android:name=".ui.fonctions.ParametreActivity"></activity>
-        <activity android:name=".ui.fonctions.RecyclerActivity" />
         <activity android:name=".ui.utilisateur.InscriptionActivity" />
         <activity android:name=".ui.utilisateur.ConnexionActivity" />
         <activity android:name=".ui.app.PhotoActivity" />

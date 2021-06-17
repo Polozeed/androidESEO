@@ -74,7 +74,7 @@ class ConnexionActivity : AppCompatActivity() {
                             val res = ServiceClient.instance.connexion(user_name, password)
                             LocalPreferences.getInstance(this@ConnexionActivity).addTokenToHistory(res.token)
                             runOnUiThread {
-                                Toast.makeText(this@ConnexionActivity, "Vous etes connecté",
+                                Toast.makeText(this@ConnexionActivity, "Vous êtes connecté",
                                     Toast.LENGTH_SHORT).show()
                                 startActivity(MainActivity.getStartIntent(this@ConnexionActivity))
                             }
@@ -90,6 +90,12 @@ class ConnexionActivity : AppCompatActivity() {
 
         binding.btnInscription?.setOnClickListener {
             startActivity(InscriptionActivity.getStartIntent(this@ConnexionActivity))
+        }
+
+        supportActionBar?.apply {
+            setTitle(R.string.connexion)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
         }
 
 
