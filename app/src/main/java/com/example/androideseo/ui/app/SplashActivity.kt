@@ -18,6 +18,7 @@ class SplashActivity : AppCompatActivity() {
         // Lancement du slashActivity durant 4 seconde puis startActvity Main
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(MainActivity.getStartIntent(this))
+            finish()
         }, 4000)
     }
 }

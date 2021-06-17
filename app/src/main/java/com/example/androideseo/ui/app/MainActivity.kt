@@ -5,24 +5,22 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.androideseo.R
-import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMainBinding
-import com.example.androideseo.ui.app.MyApp.Companion.context
-import com.example.androideseo.ui.fonctions.HistoryActivity
 import com.example.androideseo.ui.fonctions.MapActivity
 import com.example.androideseo.ui.fonctions.ParametreActivity
 import com.example.androideseo.ui.fonctions.SensorActivity
 import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.navigationrail.NavigationRailView
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,8 +33,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.toolbar, menu)
+        return true;
+    }
 
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuButton) {
+            if(binding.navigationRail.isVisible) {
+                binding.navigationRail.visibility = View.INVISIBLE
+            }
+            else {
+                binding.navigationRail.visibility = View.VISIBLE
+            }
+        }
+        return true
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,12 +64,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.logo?.setOnClickListener {
+        binding.navigationRail.visibility = View.INVISIBLE
+
+        /*binding.logo?.setOnClickListener {
             // Utilisation d'animation de lancement d'activité
             val options = ActivityOptions.makeScaleUpAnimation(binding.logo, 10, 10, binding.logo!!.getWidth(), binding.logo!!.getHeight())
             startActivity(SensorActivity.getStartIntent(this@MainActivity), options.toBundle())
-        }
-
+        }*/
 
         binding.navigationRail?.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
