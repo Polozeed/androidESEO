@@ -1,6 +1,7 @@
 package com.example.androideseo.service
 
 import com.example.androideseo.data.models.Information
+import com.example.androideseo.data.models.LocalUser
 import com.google.gson.annotations.SerializedName
 
 class ServiceInformation {
@@ -20,8 +21,14 @@ class ServiceInformation {
 
     suspend fun afficheInfos(): List<Information> {
         val api = ApiService.instance.getInfos()
-
         return api
+    }
+
+
+    suspend fun editInfo(infoId: Int, infoData: Information): Information {
+        val data = ApiService.instance.editInfo(infoId,infoData)[0]
+        System.out.println(data.toString())
+        return Information(data.id_info, data.luminosite, data.proximite, data.gravite,data.acceleration)
     }
 
     suspend fun deleteInfo(infoId: Int): String {

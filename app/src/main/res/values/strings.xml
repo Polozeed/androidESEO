@@ -69,6 +69,7 @@
     <string name="supprimer" translatable="false">supprimer</string>
     <string name="modifierMdp" translatable="false">modifier Mdp</string>
     <string name="Photo" translatable="false">photo</string>
+    <string name="Description">Description</string>
 
 
 </resources>

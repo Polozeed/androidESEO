@@ -100,9 +100,12 @@ class MainActivity : AppCompatActivity() {
                     startActivity(MapActivity.getStartIntent(this@MainActivity))
                     true
                 }
-
                 R.id.menu_item_photo -> {
                     startActivity(PhotoActivity.getStartIntent(this@MainActivity))
+                    true
+                }
+                R.id.menu_item_description -> {
+                    startActivity(DescriptionActivity.getStartIntent(this@MainActivity))
                     true
                 }
                 else -> false

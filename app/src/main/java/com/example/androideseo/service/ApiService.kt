@@ -43,11 +43,6 @@ interface ApiService {
     @POST("/client/inscription")
     suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
 
-    @POST("/information/new")
-    suspend fun postinformation(@Body infoData: ServiceInformation.EnregInfo) : Information
-
-    @DELETE("information/delete/{id}")
-    suspend fun deleteInfo(@Path("id") id: Int): String
 
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
@@ -71,6 +66,15 @@ interface ApiService {
 
     @GET("/information/{id_info}")
     suspend fun getUneInfo(@Path("id_info") id_info: Int): List<Information>
+
+    @DELETE("information/delete/{id}")
+    suspend fun deleteInfo(@Path("id") id: Int): String
+
+    @POST("/information/new")
+    suspend fun postinformation(@Body infoData: ServiceInformation.EnregInfo) : Information
+
+    @PUT("information/edit/{id}")
+    suspend fun editInfo(@Path("id") id: Int,@Body info: Information): List<Information>
 
     companion object {
         /**

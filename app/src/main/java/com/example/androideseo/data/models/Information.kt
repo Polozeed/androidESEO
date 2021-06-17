@@ -15,8 +15,22 @@ data class Information(
         return "Id:$id_info, Luminosité:$luminosite, Proximité:$proximite, Autre: $gravite; $acceleration"
     }
 
-    fun identity2(): String {
-        val NEWLINE = System.getProperty("line.separator")
-        return "Id:" + id_info +","+  NEWLINE +"Luminosité: \n" + luminosite +", \n Proximité:$proximite, Autre: $gravite; $acceleration"
+
+
+
+    fun getIdString(): String {
+        return "Id: " + id_info
+    }
+    fun getLuminositetring(): String {
+        return "Luminosité: " + luminosite.toString()
+    }
+    fun getProximiteString(): String {
+        return "Proximité: " + proximite.toString()
+    }
+    fun getGraviteString(): String {
+        return "Gravité: " + gravite.toString()
+    }
+    fun getAccelerationString(): String {
+        return "Accélération: " + acceleration.toString()
     }
 }

@@ -1,10 +1,15 @@
 package com.example.androideseo.ui.fragment
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.pm.ServiceInfo
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -31,7 +36,6 @@ class DetailsInfoFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_infodetails, container, false)
     }
 
@@ -47,7 +51,15 @@ class DetailsInfoFragment : Fragment() {
             activity?.runOnUiThread {
                 view?.apply {
                     val identity = findViewById<TextView>(R.id.infoidentity)
-                    identity.text = info.identity()
+                    identity.text = info.getIdString()
+                    val identity2 = findViewById<TextView>(R.id.infoidentity2)
+                    identity2.text = info.getProximiteString()
+                    val identity3 = findViewById<TextView>(R.id.infoidentity3)
+                    identity3.text = info.getLuminositetring()
+                    val identity4 = findViewById<TextView>(R.id.infoidentity4)
+                    identity4.text = info.getGraviteString()
+                    val identity5 = findViewById<TextView>(R.id.infoidentity5)
+                    identity5.text = info.getAccelerationString()
 
                     findViewById<Button>(R.id.deleteinfo)?.setOnClickListener {
                         CoroutineScope(Dispatchers.IO).launch {
@@ -57,20 +69,6 @@ class DetailsInfoFragment : Fragment() {
                         }
                         Toast.makeText(MyApp.context, "Element Supprimé", Toast.LENGTH_SHORT).show()
                         startActivity(HistoriqueInfoActivity.getStartIntent(this.context))
-
-
-                    }
-
-                    // Ici faire modification pour action de modif
-                    findViewById<Button>(R.id.modifierinfo)?.setOnClickListener {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            runCatching {
-
-                            }
-                        }
-                        Toast.makeText(MyApp.context, "En cours de creation", Toast.LENGTH_SHORT).show()
-                        startActivity(HistoriqueInfoActivity.getStartIntent(this.context))
-
 
                     }
 
