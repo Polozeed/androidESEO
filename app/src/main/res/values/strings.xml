@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Ratt ESEO</string>
-    <string name="splash">"Maxime Pouplain /Martin Courier de Méré / A2 / 2021 "</string>
-    <string name="retard"> Les bons plans Angevins ?</string>
+    <string name="app_name">Developpeur Junior</string>
     <string name="Historique">historique</string>
     <string name="hello_eseo" translatable="false">Hello Eseo!</string>
     <string name="troll" translatable="false">troll</string>
@@ -34,7 +32,7 @@
     <string name="ajoutAdresse">Ajouter adresse Historique</string>
     <string name="espace" translatable="false" />
     <string name="suppAllHist">Supprimer Historique</string>
-    <string name="splash2">Projet Android</string>
+    <string name="projetAndroid" translatable="false">Projet Android</string>
     <string name="easter">Si vous etes ici vous avez gagner le droit de me mettre un 18/20 à ce projet !
     Cordialement </string>
     <string name="trollpage">Troll Page</string>
@@ -69,7 +67,10 @@
     <string name="supprimer" translatable="false">supprimer</string>
     <string name="modifierMdp" translatable="false">modifier Mdp</string>
     <string name="Photo" translatable="false">photo</string>
-    <string name="Description">Description</string>
+    <string name="Description" translatable="false">Description</string>
+    <string name="menu" translatable="false">Menu</string>
+    <string name="maxime_pouplain" translatable="false">Maxime Pouplain</string>
+    <string name="martin" translatable="false">Martin Courier de Méré</string>
     <string name="menu">menu</string>
     <string name="DescriptionAPI">Description API</string>
 

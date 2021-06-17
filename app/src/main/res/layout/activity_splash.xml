@@ -6,55 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".ui.app.SplashActivity">
 
-
-    <TextView
-        android:id="@+id/titreApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/retard"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
         android:layout_width="368dp"
         android:layout_height="363dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/load"></com.airbnb.lottie.LottieAnimationView>
-
-
+        app:lottie_rawRes="@raw/loading"></com.airbnb.lottie.LottieAnimationView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/maxime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="28dp"
+        android:text="@string/maxime_pouplain"
         android:textSize="20dp"
-        android:text="@string/splash"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/rouge"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/animation_view" />
 
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/martin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/splash2"
+        android:layout_marginRight="28dp"
+        android:text="@string/martin"
+        android:textColor="@color/rouge"
         android:textSize="20dp"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maxime" />
+
+    <TextView
+        android:id="@+id/annee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A2 - 2020 / 2021"
+        android:textColor="@color/rouge"
+        android:textSize="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="28dp"
+        app:layout_constraintTop_toBottomOf="@id/martin" />
+
+    <TextView
+        android:id="@+id/projet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Projet Android"
+        android:textSize="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/titreApp"/>
+
+    <TextView
+        android:id="@+id/titreApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/rouge"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/animation_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
