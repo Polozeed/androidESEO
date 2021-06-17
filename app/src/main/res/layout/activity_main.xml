@@ -7,18 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.app.MainActivity">
 
-
-
-
-
     <com.google.android.material.navigationrail.NavigationRailView
         android:id="@+id/navigation_rail"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:menu="@menu/navigation_rail_menu" />
-
-
-
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/logo"
