@@ -27,7 +27,6 @@ class ListFragment : Fragment() {
 
     val dataSource = emptyDataSource()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -59,7 +58,6 @@ class ListFragment : Fragment() {
                 }
             }
         }
-
     }
 
     private fun getData() {

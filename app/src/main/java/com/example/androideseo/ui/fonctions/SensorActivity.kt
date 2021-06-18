@@ -25,7 +25,7 @@ import kotlin.concurrent.fixedRateTimer
 
 class SensorActivity : AppCompatActivity(), SensorEventListener {
 
-    private lateinit var binding: ActivitySensorBinding // <-- Référence à notre ViewBinding
+    private lateinit var binding: ActivitySensorBinding //
     private lateinit var sensorManager: SensorManager
     private var result: String = ""
 
@@ -62,8 +62,6 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
                 startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
             } else
                 Toast.makeText(this@SensorActivity,"Veuillez vous connecter pour accéder à cette page",Toast.LENGTH_LONG).show()
-
-
         }
 
         binding.enregisterSensor.setOnClickListener {
@@ -77,16 +75,16 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
                     )
                     val res = ServiceInformation.instance.enregInfo(info)
                     result = res.identity()
-
                 }
             }
             Toast.makeText(this@SensorActivity,result,Toast.LENGTH_LONG).show()
 
         }
 
-        // Code executé toutes les 20 secondes
+        /**
+         * Code executé toutes les 20 secondes
+         */
         fixedRateTimer("timer",false,0,20000) {
-            //this@SensorActivity.runOnUiThread {
                 CoroutineScope(Dispatchers.IO).launch {
                     runCatching {
                         val info = ServiceInformation.EnregInfo(
@@ -97,10 +95,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
                         )
                         val result = ServiceInformation.instance.enregInfo(info)
                     }
-
-
                 }
-            //}
         }
     }
 
@@ -110,9 +105,13 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
-        // Do something here if sensor accuracy changes.
     }
 
+    /**
+     * TODO
+     *
+     * @param event
+     */
     override fun onSensorChanged(event: SensorEvent) {
         when(event.sensor.type) {
             Sensor.TYPE_LIGHT -> arr[0].value = event.values[0]
@@ -125,6 +124,10 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         binding.sensorList.adapter?.notifyDataSetChanged()
     }
 
+    /**
+     * TODO
+     *
+     */
     override fun onResume() {
         super.onResume()
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
@@ -137,6 +140,10 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         binding.sensorList.adapter = AdapterSensor(arr)
     }
 
+    /**
+     * TODO
+     *
+     */
     override fun onPause() {
         super.onPause()
         sensorManager.unregisterListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT))

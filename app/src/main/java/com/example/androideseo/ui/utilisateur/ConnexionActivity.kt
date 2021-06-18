@@ -23,9 +23,17 @@ import kotlinx.coroutines.launch
 
 class ConnexionActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityConnexionBinding// <-- Référence à notre ViewBinding
+    private lateinit var binding: ActivityConnexionBinding
 
-    // Objet présent dans la liste (structure objet)
+
+    /**
+     * TODO
+     * Objet présent dans la liste
+     * @property id
+     * @property name
+     * @property content
+     * @property done
+     */
     data class User (var id : Int, var name : String, var content : String, var done : Boolean)
     data class UserApi ( var data : Array<User>)
 
@@ -45,13 +53,11 @@ class ConnexionActivity : AppCompatActivity() {
         binding = ActivityConnexionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // get reference to all views
         var user_name = findViewById<EditText>(R.id.login)
         var password = findViewById<EditText>(R.id.password)
 
 
         binding.btnReset?.setOnClickListener {
-            // clearing user_name and password edit text views on reset button click
             user_name.setText("")
             password.setText("")
         }
@@ -82,11 +88,7 @@ class ConnexionActivity : AppCompatActivity() {
                     }
                 }
                 .show()
-
-            
         }
-
-
 
         binding.btnInscription?.setOnClickListener {
             startActivity(InscriptionActivity.getStartIntent(this@ConnexionActivity))
@@ -97,8 +99,6 @@ class ConnexionActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
-
-
     }
 
 

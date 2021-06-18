@@ -20,7 +20,15 @@ class InscriptionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInscriptionBinding // <-- Référence à notre ViewBinding
 
-    // Objet présent dans la liste (structure objet)
+
+    /**
+     * TODO
+     * Objet présent dans la liste (structure objet)
+     * @property id
+     * @property name
+     * @property content
+     * @property done
+     */
     data class User (var id : Int, var name : String, var content : String, var done : Boolean)
     data class UserApi ( var data : Array<User>)
 
@@ -39,13 +47,11 @@ class InscriptionActivity : AppCompatActivity() {
         binding = ActivityInscriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // get reference to all views
         var user_name = findViewById<EditText>(R.id.login)
         var password = findViewById<EditText>(R.id.password)
 
 
         binding.btnReset?.setOnClickListener {
-            // clearing user_name and password edit text views on reset button click
             user_name.setText("")
             password.setText("")
         }
@@ -73,9 +79,6 @@ class InscriptionActivity : AppCompatActivity() {
                     }
                 }
                 .show()
-
-
-
         }
 
         supportActionBar?.apply {
@@ -84,8 +87,6 @@ class InscriptionActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
     }
-
-
 
 
 

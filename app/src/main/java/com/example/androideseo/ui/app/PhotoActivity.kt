@@ -25,8 +25,10 @@ import java.net.URI
 
 class PhotoActivity : AppCompatActivity() {
 
+    /**
+     *  Probleme ligne 114 avec l'utilisation du @Multipart
+     */
 
-    // Probleme ligne 114 avec l'utilisation du @Multipart
 
     private val PERMISSION_CODE = 1000;
     private val IMAGE_CAPTURE_CODE = 1001
@@ -81,6 +83,10 @@ class PhotoActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * TODO
+     *
+     */
     private fun openCamera() {
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, "New Picture")
@@ -99,7 +105,7 @@ class PhotoActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        //called when user presses ALLOW or DENY from Permission Request Popup
+
         when(requestCode){
             PERMISSION_CODE -> {
                 if (grantResults.size > 0 && grantResults[0] ==

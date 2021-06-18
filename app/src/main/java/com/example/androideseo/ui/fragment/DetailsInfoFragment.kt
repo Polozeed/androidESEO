@@ -71,9 +71,7 @@ class DetailsInfoFragment : Fragment() {
                         startActivity(HistoriqueInfoActivity.getStartIntent(this.context))
 
                     }
-
                 }
-
             }
         }
     }

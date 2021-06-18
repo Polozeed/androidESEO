@@ -52,7 +52,6 @@ class ParametreActivity : AppCompatActivity() {
 
                 },
             SettingsItem("Ville d'Angers", R.drawable.app) {
-                // Action au clique
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.angers.fr/" )));
             }
 

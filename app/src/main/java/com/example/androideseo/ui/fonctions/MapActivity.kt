@@ -26,17 +26,13 @@ import java.util.*
 class MapActivity : AppCompatActivity() {
 
     private val PERMISSION_REQUEST_LOCATION: Int = 999;
-    private  val lateseo = 47.492884574915365;
-    private  val longeseo = -0.5509639806591626;
-    private lateinit var binding: ActivityMapBinding // <-- Référence à notre ViewBinding
+    private lateinit var binding: ActivityMapBinding
 
     companion object {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, MapActivity::class.java)
         }
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +47,6 @@ class MapActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // --> Indique que l'on utilise le ViewBinding
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -65,7 +60,6 @@ class MapActivity : AppCompatActivity() {
         binding.buttonGoogleMap.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
         }
-
 
         binding.buttonhist?.setOnClickListener {
             if (LocalPreferences.getInstance(this).nullHistory() == 0) {
@@ -81,10 +75,19 @@ class MapActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     private fun hasPermission(): Boolean {
         return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * TODO
+     *
+     */
     private fun requestPermission() {
         if (!hasPermission()) {
             ActivityCompat.requestPermissions(
@@ -97,6 +100,13 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     override fun onRequestPermissionsResult(
             requestCode: Int,
             permissions: Array<out String>,
@@ -106,9 +116,7 @@ class MapActivity : AppCompatActivity() {
 
         when (requestCode) {
             PERMISSION_REQUEST_LOCATION -> {
-                // If request is cancelled, the result arrays are empty.
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Permission obtenue
                     getLocation()
                 } else {
                     // Permission non accordé par l'utilisateur
@@ -120,6 +128,10 @@ class MapActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * TODO
+     *
+     */
     @SuppressLint("MissingPermission")
     private fun getLocation() {
         if (hasPermission()) {
@@ -132,6 +144,12 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param location
+     * @return
+     */
     private fun geoCode(location: Location): MutableList<Address>? {
         val geocoder = Geocoder(this, Locale.getDefault())
         val results = geocoder.getFromLocation(location.latitude, location.longitude, 1)
