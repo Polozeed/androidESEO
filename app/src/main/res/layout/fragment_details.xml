@@ -43,38 +43,37 @@
 
     <Button
         android:id="@+id/deleteclient"
-        android:layout_width="117dp"
-        android:layout_height="33dp"
-        android:layout_marginLeft="88dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="28dp"
         android:text="@string/supp"
-        android:textSize="15px"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <Button
         android:id="@+id/modifierclient"
-        android:layout_width="117dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="88dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="28dp"
         android:text="@string/modif"
-        android:textSize="16px"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <Button
         android:id="@+id/modifiermdp"
-        android:layout_width="113dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="92dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="272dp"
         android:text="@string/modifierMdp"
-        android:textSize="16px"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="12dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

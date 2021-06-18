@@ -57,7 +57,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
             setDisplayShowHomeEnabled(true)
         }
 
-        binding.historique.setOnClickListener {
+        binding.history.setOnClickListener {
             if (LocalPreferences.getInstance(this@SensorActivity).nullToken() == 1) {
                 startActivity(HistoriqueInfoActivity.getStartIntent(this@SensorActivity))
             } else

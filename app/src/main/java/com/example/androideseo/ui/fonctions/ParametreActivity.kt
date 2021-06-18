@@ -31,11 +31,11 @@ class ParametreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_parametre)
 
         val arr = arrayOf(
-            SettingsItem("Paramètre Application", R.drawable.parametre) {
+            SettingsItem("Paramètres Généraux", R.drawable.parametre) {
                 // Action au clique
                 startActivity(Intent(ACTION_SETTINGS))
             },
-            SettingsItem("Paramètre Localisation", R.drawable.paramlocation) {
+            SettingsItem("Paramètres Localisation", R.drawable.paramlocation) {
                 // Action au clique
                 startActivity(Intent(ACTION_LOCATION_SOURCE_SETTINGS))
             },
@@ -44,7 +44,7 @@ class ParametreActivity : AppCompatActivity() {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:47.492884574915365,-0.5509639806591626")));
 
             },
-            SettingsItem("Contacter nous", R.drawable.email) {
+            SettingsItem("Contactez-nous", R.drawable.email) {
                 // Action au clique
                 startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:martincourierdemere@gmail.com " +
                         "?subject=" + Uri.encode("Indiquer le sujet de la demande") +

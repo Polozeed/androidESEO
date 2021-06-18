@@ -67,7 +67,7 @@ class MapActivity : AppCompatActivity() {
         }
 
 
-        binding.buttonhist?.setOnClickListener {
+        binding.history?.setOnClickListener {
             if (LocalPreferences.getInstance(this).nullHistory() == 0) {
                 Toast.makeText(this, getString(R.string.histvide), Toast.LENGTH_SHORT).show()
             }else{
@@ -138,7 +138,6 @@ class MapActivity : AppCompatActivity() {
         val locationText = findViewById<TextView>(R.id.textMap)
         if (results.isNotEmpty()) {
             locationText.text = results[0].getAddressLine(0)
-            Toast.makeText(this@MapActivity,results[0].getAddressLine(0),Toast.LENGTH_LONG).show()
             LocalPreferences.getInstance(this).addToHistory(locationText.text.toString())
 
         }

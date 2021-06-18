@@ -44,4 +44,5 @@
     <string name="obtenir_les_donn_es">Get data</string>
     <string name="description_appli">Appli description</string>
     <string name="projet_android">Android project</string>
+    <string name="votre_position">Your position</string>
 </resources>

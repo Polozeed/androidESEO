@@ -6,30 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.fonctions.MapActivity">
 
+
     <Button
         android:id="@+id/buttonMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/localisation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonGoogleMap"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.248" />
-
-
-    <Button
-        android:id="@+id/buttonhist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Historique"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@id/buttonGoogleMap" />
 
     <Button
         android:id="@+id/buttonGoogleMap"
@@ -37,35 +24,48 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="@string/goGoogleMap"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="20dp"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonMap" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
 
     <TextView
         android:id="@+id/textMap"
-        android:layout_width="333dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="337dp"
+        android:layout_height="75dp"
         android:text=""
+        android:textStyle="bold"
+        android:gravity="center"
         android:textSize="18dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/animation_view" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
         android:layout_width="335dp"
         android:layout_height="360dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        android:layout_marginTop="110dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/map"></com.airbnb.lottie.LottieAnimationView>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/history"
+        android:layout_width="69dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/history"></com.airbnb.lottie.LottieAnimationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
