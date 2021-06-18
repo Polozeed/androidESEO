@@ -22,11 +22,13 @@ import com.example.androideseo.ui.fragment.viewHolder.LocalUserViewHolder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
+/**
+ * TODO
+ * Classe permettant affichage liste client
+ */
 class ListFragment : Fragment() {
 
     val dataSource = emptyDataSource()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +61,6 @@ class ListFragment : Fragment() {
                 }
             }
         }
-
     }
 
     private fun getData() {

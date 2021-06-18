@@ -22,21 +22,20 @@ import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMapBinding
 import java.util.*
 
-
+/**
+ * TODO
+ * Classe permettant d'acceder aux fonctionnalités lié a la map
+ */
 class MapActivity : AppCompatActivity() {
 
     private val PERMISSION_REQUEST_LOCATION: Int = 999;
-    private  val lateseo = 47.492884574915365;
-    private  val longeseo = -0.5509639806591626;
-    private lateinit var binding: ActivityMapBinding // <-- Référence à notre ViewBinding
+    private lateinit var binding: ActivityMapBinding
 
     companion object {
         fun getStartIntent(context: Context): Intent {
             return Intent(context, MapActivity::class.java)
         }
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +50,6 @@ class MapActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // --> Indique que l'on utilise le ViewBinding
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -66,8 +64,7 @@ class MapActivity : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:")));
         }
 
-
-        binding.history?.setOnClickListener {
+        binding.buttonhist?.setOnClickListener {
             if (LocalPreferences.getInstance(this).nullHistory() == 0) {
                 Toast.makeText(this, getString(R.string.histvide), Toast.LENGTH_SHORT).show()
             }else{
@@ -81,10 +78,19 @@ class MapActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     private fun hasPermission(): Boolean {
         return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * TODO
+     *
+     */
     private fun requestPermission() {
         if (!hasPermission()) {
             ActivityCompat.requestPermissions(
@@ -97,6 +103,13 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     override fun onRequestPermissionsResult(
             requestCode: Int,
             permissions: Array<out String>,
@@ -106,9 +119,7 @@ class MapActivity : AppCompatActivity() {
 
         when (requestCode) {
             PERMISSION_REQUEST_LOCATION -> {
-                // If request is cancelled, the result arrays are empty.
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Permission obtenue
                     getLocation()
                 } else {
                     // Permission non accordé par l'utilisateur
@@ -120,6 +131,10 @@ class MapActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * TODO
+     *
+     */
     @SuppressLint("MissingPermission")
     private fun getLocation() {
         if (hasPermission()) {
@@ -132,12 +147,19 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param location
+     * @return
+     */
     private fun geoCode(location: Location): MutableList<Address>? {
         val geocoder = Geocoder(this, Locale.getDefault())
         val results = geocoder.getFromLocation(location.latitude, location.longitude, 1)
         val locationText = findViewById<TextView>(R.id.textMap)
         if (results.isNotEmpty()) {
             locationText.text = results[0].getAddressLine(0)
+            Toast.makeText(this@MapActivity,results[0].getAddressLine(0),Toast.LENGTH_LONG).show()
             LocalPreferences.getInstance(this).addToHistory(locationText.text.toString())
 
         }

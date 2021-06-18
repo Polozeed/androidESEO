@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androideseo.R
 import com.example.androideseo.adapter.AdapterParam
 import com.example.androideseo.databinding.ActivityParametreBinding
-
+/**
+ * TODO
+ * Classe permettant l'acces au parametre de l'application
+ */
 class ParametreActivity : AppCompatActivity() {
 
 
@@ -52,7 +55,6 @@ class ParametreActivity : AppCompatActivity() {
 
                 },
             SettingsItem("Ville d'Angers", R.drawable.app) {
-                // Action au clique
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.angers.fr/" )));
             }
 

@@ -13,7 +13,10 @@ import com.example.androideseo.databinding.ActivityDescriptionBinding
 import com.example.androideseo.databinding.ActivitySensorBinding
 import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 
-
+/**
+ * TODO
+ * Classe correspondant a l'activité situé dans /mainActivity/parametre/a_propos/
+ */
 class DescriptionActivity : AppCompatActivity() {
 
 

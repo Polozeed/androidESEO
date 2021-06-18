@@ -16,6 +16,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * TODO
+ * Classe permettant le support du framgent liste client
+ */
 class ListClientActivity  : AppCompatActivity() {
 
     companion object {

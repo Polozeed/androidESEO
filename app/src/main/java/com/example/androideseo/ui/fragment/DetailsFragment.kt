@@ -23,10 +23,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * TODO
+ * Classe permettant affichage d'un client apres clic sur liste client
+ */
 class DetailsFragment : Fragment() {
 
     val args: DetailsFragmentArgs by navArgs()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +38,7 @@ class DetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-
-    ): View? {
-        // Inflate the layout for this fragment
+        savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
@@ -65,9 +65,7 @@ class DetailsFragment : Fragment() {
                             }
                         }
                         Toast.makeText(
-                            MyApp.context, "Element Supprimé",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            MyApp.context, "Element Supprimé", Toast.LENGTH_SHORT).show()
                         startActivity(ListClientActivity.getStartIntent(this.context))
 
                     }
@@ -136,10 +134,6 @@ class DetailsFragment : Fragment() {
             }
         }
     }
-
-
-
-
 
 
     companion object {

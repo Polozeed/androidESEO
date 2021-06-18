@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 
 
 /**
- * ApiService
+ * ApiService permettant de créer la connexion avec l'api
  */
 interface ApiService {
 
@@ -36,43 +36,113 @@ interface ApiService {
     // You can add other parameters too
 
 
-
+    /**
+     * TODO
+     *
+     * @param userData
+     * @return
+     */
     @POST("/client/connexion")
     suspend fun postconnexion(@Body userData: ServiceClient.UserInfo) : Client
 
+    /**
+     * TODO
+     *
+     * @param userData
+     * @return
+     */
     @POST("/client/inscription")
     suspend fun postinscription(@Body userData: ServiceClient.UserInfo) : Client
 
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     @GET("/client/liste")
     suspend fun getListeClient(): List<Client>
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     @GET("client/liste")
     suspend fun getUsers(): List<User>
 
+
+    /**
+     * TODO
+     *
+     * @param id
+     * @return
+     */
     @GET("/client/{id}")
     suspend fun getUser(@Path("id") id: Int): List<User>
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     @GET("/information/liste")
     suspend fun getInfos(): List<Information>
 
+    /**
+     * TODO
+     *
+     * @param id
+     * @return
+     */
     @DELETE("client/delete/{id}")
     suspend fun deleteUser(@Path("id") id: Int): String
 
+    /**
+     * TODO
+     *
+     * @param id
+     * @param userData
+     * @return
+     */
     @PUT("client/edit/{id}")
     suspend fun editUser(@Path("id") id: Int,@Body userData: ServiceClient.UserInfo): List<User>
 
 
-
+    /**
+     * TODO
+     *
+     * @param id_info
+     * @return
+     */
     @GET("/information/{id_info}")
     suspend fun getUneInfo(@Path("id_info") id_info: Int): List<Information>
 
+    /**
+     * TODO
+     *
+     * @param id
+     * @return
+     */
     @DELETE("information/delete/{id}")
     suspend fun deleteInfo(@Path("id") id: Int): String
 
+    /**
+     * TODO
+     *
+     * @param infoData
+     * @return
+     */
     @POST("/information/new")
     suspend fun postinformation(@Body infoData: ServiceInformation.EnregInfo) : Information
 
+    /**
+     * TODO
+     *
+     * @param id
+     * @param info
+     * @return
+     */
     @PUT("information/edit/{id}")
     suspend fun editInfo(@Path("id") id: Int,@Body info: Information): List<Information>
 
@@ -112,6 +182,7 @@ interface ApiService {
                     })
 
                     .build()
+
 
             return Retrofit.Builder()
                     .baseUrl("http://localhost:8083")

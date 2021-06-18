@@ -16,8 +16,6 @@ data class Information(
     }
 
 
-
-
     fun getIdString(): String {
         return "Id: " + id_info
     }

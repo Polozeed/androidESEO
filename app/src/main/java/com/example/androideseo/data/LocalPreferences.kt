@@ -22,21 +22,39 @@ class LocalPreferences private constructor(context: Context) {
 
     }
 
-
+    /**
+     * TODO
+     *
+     * @param newEntry
+     */
     fun addTokenToHistory(newEntry: String){
         sharedPreferences.edit().putString("token",newEntry).apply()
     }
 
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     fun getToken(): String? {
         return sharedPreferences.getString("token", String())
     }
 
 
+    /**
+     * TODO
+     *
+     */
     fun deleteToken() {
         sharedPreferences.edit().putString("token",null).apply()
     }
 
+    /**
+     * TODO
+     *
+     * @return
+     */
     fun nullToken(): Int {
         var res = sharedPreferences.getString("token",String())?.isEmpty();
         if (res != true) {
@@ -46,26 +64,43 @@ class LocalPreferences private constructor(context: Context) {
     }
 
 
+    /**
+     * TODO Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
+     *
+     * @param newEntry
+     */
 
-
-    // Fct permettant d'ajouter une adresse dans lieu de sauvegarde " histories"
     fun addToHistory(newEntry: String){
         val history = this.getHistory()
         history?.add(newEntry)
         sharedPreferences.edit().putStringSet("histories", history).apply()
     }
 
-    // Fct permettant de recupérer les adresses sauvegardés
+
+    /**
+     * TODO Fct permettant de recupérer les adresses sauvegardés
+     *
+     * @return
+     */
     fun getHistory(): MutableSet<String>? {
         return sharedPreferences.getStringSet("histories",  mutableSetOf<String>().toMutableSet() )
     }
 
-    // Fct permettant de supprimer les adresses
+
+    /**
+     * TODO fct permettant de supprimer les adresses
+     *
+     */
     fun deleteAllHistory() {
         sharedPreferences.edit().clear().apply()
     }
 
-    // Fct permettant de verifier si le lieu de sauvegarde est vide
+
+    /**
+     * TODO Fct permettant de verifier si le lieu de sauvegarde est vide
+     *
+     * @return
+     */
     fun nullHistory(): Int {
         var res = sharedPreferences.getStringSet("histories", mutableSetOf<String>())?.isEmpty();
         if (res != true) {

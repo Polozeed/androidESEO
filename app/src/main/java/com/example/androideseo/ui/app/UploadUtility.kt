@@ -28,6 +28,12 @@ class UploadUtility(activity: Activity) {
         uploadFile(File(pathFromUri), uploadedFileName)
     }
 
+    /**
+     * TODO
+     *
+     * @param sourceFile
+     * @param uploadedFileName
+     */
     fun uploadFile(sourceFile: File, uploadedFileName: String? = null) {
         Thread {
             val mimeType = getMimeType(sourceFile);
@@ -63,7 +69,12 @@ class UploadUtility(activity: Activity) {
         }.start()
     }
 
-    // url = file path or whatever suitable URL you want.
+    /**
+     * TODO
+     *
+     * @param file
+     * @return
+     */
     fun getMimeType(file: File): String? {
         var type: String? = null
         val extension = MimeTypeMap.getFileExtensionFromUrl(file.path)
@@ -73,12 +84,22 @@ class UploadUtility(activity: Activity) {
         return type
     }
 
+    /**
+     * TODO
+     *
+     * @param message
+     */
     fun showToast(message: String) {
         activity.runOnUiThread {
             Toast.makeText( activity, message, Toast.LENGTH_LONG ).show()
         }
     }
 
+    /**
+     * TODO
+     *
+     * @param show
+     */
     fun toggleProgressDialog(show: Boolean) {
         activity.runOnUiThread {
             if (show) {

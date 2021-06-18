@@ -30,8 +30,6 @@ class HistoryActivity : AppCompatActivity() {
         val valHist = LocalPreferences.getInstance(this@HistoryActivity).getHistory()
         val res : Array<String> = valHist!!.toTypedArray()
 
-
-        // --> Indique que l'on utilise le ViewBinding
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.history.layoutManager = LinearLayoutManager(this)

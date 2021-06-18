@@ -6,7 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
-
+/**
+ * TODO
+ * Classe de chargement au demarage de l'application
+ */
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +18,10 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Lancement du slashActivity durant 4 seconde puis startActvity Main
+        /**
+         * Lancement du slashActivity durant 4 seconde puis startActvity Main
+         */
+
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(MainActivity.getStartIntent(this))
             finish()

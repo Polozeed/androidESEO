@@ -23,7 +23,10 @@ import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
 
-
+/**
+ * TODO
+ * Classe gerant la page principale de l'application
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding // <-- Référence à notre ViewBinding
@@ -51,15 +54,12 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Creation des animations sur les boutons
-        val animationSimple: Animation = AnimationUtils.loadAnimation(applicationContext,
-                R.anim.simple_animation)
-        val animationfade: Animation = AnimationUtils.loadAnimation(applicationContext,
-                R.anim.fadein_animation)
+
 
         // --> Indique que l'on utilise le ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -67,11 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navigationRail.visibility = View.INVISIBLE
 
-        /*binding.logo?.setOnClickListener {
-            // Utilisation d'animation de lancement d'activité
-            val options = ActivityOptions.makeScaleUpAnimation(binding.logo, 10, 10, binding.logo!!.getWidth(), binding.logo!!.getHeight())
-            startActivity(SensorActivity.getStartIntent(this@MainActivity), options.toBundle())
-        }*/
+
 
         binding.navigationRail?.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {

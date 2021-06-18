@@ -8,6 +8,10 @@ import com.example.androideseo.R
 import com.example.androideseo.databinding.ActivityDescriptionBinding
 import com.example.androideseo.databinding.ActivityDescriptionapiBinding
 
+/**
+ * TODO
+ * Classe correspondant a l'activité situé dans /mainActivity/parametre/a_propos/api
+ */
 class DescriptionAPIActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDescriptionapiBinding // <-- Référence à notre ViewBinding
