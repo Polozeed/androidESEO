@@ -10,16 +10,17 @@
         android:id="@+id/textView3"
         android:layout_width="366dp"
         android:layout_height="526dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="Bonjour, \n
-Au cours de ce projet, nous nous sommes principalement concentré sur le devellopement 'back end' de l'application. Les fonctionnalités que nous avons develloper ont été choisi pour leur interet technologique et non fonctionnel. \n \n
-Effectivement, nous avons travaillé avec des fragments pour les listes de donnée, des fonctionnalités de connexion par identification puis par utilisation de token dans les echanges client serveur. \n \n
-Nous avons continuer notre apprentissage sur la partie map, cependant nous voulions pouvoir enregistrer des positions gps et les affichés mais par manque de temps nous avons anbandonné partiellement cette fonctionnalité. \n \n
-Enfin, nous avons essayer de mettre en place un systeme de traitement d'image, celui est fonctionnel d'un point de vu serveur mais en cours de devellopement pour la partie application.   \n \n
-Cordialement  \n \n
-L'équie des apprentis développeur \n \n"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="22dp" />
+Au cours de ce projet, nous nous sommes principalement concentrés sur le developpement 'back-end' de l'application. Les fonctionnalités que nous avons developpées ont été choisies pour leur interêt technologique et non fonctionnel. \n \n
+En effet, nous avons travaillé avec des fragments pour les listes de données, des fonctionnalités de connexion par identification puis par utilisation de token dans les échanges client serveur. \n \n
+Nous avons continué notre apprentissage sur la partie map. Nous voulions pouvoir enregistrer des positions gps mais nous n'avons pas réussi. \n \n
+Enfin, nous avons essayé de mettre en place un système de traitement d'images, celui est fonctionnel d'un point de vue serveur mais c'est encore en cours de dévelopement pour la partie application.   \n \n \n
+Cordialement,  \n
+L'équipe des apprentis développeurs \n \n"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnapi"

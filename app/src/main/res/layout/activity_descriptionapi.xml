@@ -19,14 +19,14 @@
         android:id="@+id/textView3"
         android:layout_width="384dp"
         android:layout_height="620dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="
-Pour ce qui est de la partie API, nous avons travaillé avec spring boot, JPA reposant sur un serveur local communiquant avec une base de donnée MySQL.  \n  \n
+Pour ce qui est de la partie API, nous avons travaillé avec spring boot, JPA reposant sur un serveur local communiquant avec une base de données MySQL.  \n  \n
 
-Cette partie du projet a été effectué rapidement par nos soins et apporte de nombreuses fonctionnalités tel que la sauvegarde d'information, de client, ansi que l'enregistrement des echanges entre le serveur et l'application. Enfin nous avons travaillé afin de sauvegarder des images en base et de pouvoir en faire l'administation a partir de notre API. \n  \n
+Cette partie du projet a été effectuée rapidement par nos soins et apporte de nombreuses fonctionnalités telles que la sauvegarde d'informations, de clients, ansi que l'enregistrement des échanges entre le serveur et l'application. Enfin nous pouvons sauvegarder des images en base et les modifier, supprimer sur l'application grâce à notre API. \n  \n
 
-Ci dessous vous retrouverez l'ensemble des fonctionnalités supporter par notre API. Toutes ces informations sont retrouvables dans la javadoc fournie avec ce projet. \n  \n
+Ci dessous vous retrouverez l'ensemble des fonctionnalités supportées par notre API. Toutes ces informations sont retrouvables dans la javadoc fournie avec ce projet. \n  \n
 
 Client Controlleur :\n
 	 GET : client par id,login, List Client \n

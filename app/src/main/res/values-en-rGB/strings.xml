@@ -1,25 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ratt ESEO</string>
-    <string name="splash">"Martin Courier de Méré / A2 / 2021 "</string>
-    <string name="retard">" Are you late for your catch-ups?"</string>
+    <string name="app_name">Junior Developers</string>
     <string name="Historique">History</string>
-    <string name="ajoutAdresse">" Add address History"</string>
+    <string name="ajoutAdresse">" Add address history"</string>
     <string name="suppAllHist">Delete History</string>
     <string name="goGoogleMap">See on google map</string>
-    <string name="eseo">" Eseo website"</string>
-    <string name="map">google map</string>
-    <string name="localisation">" Locate me"</string>
-    <string name="whatever">back</string>
-    <string name="retour">back</string>
-    <string name="w">" Settings"</string>
+    <string name="map">Localisation</string>
+    <string name="localisation">Locate me</string>
     <string name="parametre">" Settings"</string>
-    <string name="Localisation">localisation</string>
-    <string name="splash2">Android Project</string>
-    <string name="easter">If you are here you have earned the right to give me an 18/20 for this project!     cordially</string>
-    <string name="trollpage">Troll Page</string>
     <string name="histTitle">Location history</string>
     <string name="histvide">Empty History</string>
-    <string name="activitymap">Map Activity</string>
     <string name="textacceptPerm">To locate you, please accept the previous parameter</string>
+    <string name="first_fragment_label" translatable="false">First fragment</string>
+    <string name="second_fragment_label">Second fragment</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="reset" translatable="false">Reset</string>
+    <string name="connexion" translatable="false">Connection</string>
+    <string name="inscription" translatable="false">Registration</string>
+    <string name="demandeAutorisation" translatable="false">Authorization request</string>
+    <string name="demandeLoc">Location request</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="annuler" translatable="false">Cancel</string>
+    <string name="modif" translatable="false">Modify username</string>
+    <string name="supp">Delete item</string>
+    <string name="menu_principal">Main mennu</string>
+    <string name="client" translatable="false">Clients</string>
+    <string name="sensor" translatable="false">Sensors</string>
+    <string name="decline" translatable="false">Decline</string>
+    <string name="accept" translatable="false">Accept</string>
+    <string name="messageconnexion" translatable="false">Doyou want to connect to our API ?</string>
+    <string name="connexiondefaut" translatable="false">Click on registration to create an account</string>
+    <string name="inscriptionmessage" translatable="false">Are you sure you want to create an account with this login and password ?</string>
+    <string name="Enregistrer" translatable="false">Register</string>
+    <string name="api" translatable="false">api</string>
+    <string name="supprimer" translatable="false">Delete</string>
+    <string name="modifierMdp" translatable="false">Modify password</string>
+    <string name="Photo" translatable="false">Take a picture</string>
+    <string name="Description">About us</string>
+    <string name="menu">Menu</string>
+    <string name="maxime_pouplain">Maxime Pouplain</string>
+    <string name="martin">Martin Courier de Méré</string>
+    <string name="DescriptionAPI">API description</string>
+    <string name="obtenir_les_donn_es">Get data</string>
+    <string name="description_appli">Appli description</string>
+    <string name="projet_android">Android project</string>
 </resources>

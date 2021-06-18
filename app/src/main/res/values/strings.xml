@@ -1,73 +1,50 @@
 <resources>
     <string name="app_name">Développeurs Juniors</string>
-    <string name="Historique">historique</string>
-    <string name="hello_eseo" translatable="false">Hello Eseo!</string>
-    <string name="troll" translatable="false">troll</string>
-    <string name="radiobutton" translatable="false">RadioButton</string>
-    <string name="testToast" translatable="false">hello la team eseo</string>
-    <string name="bonjour_eseo" translatable="false">Bonjour Eseo</string>
-    <string name="normal" translatable="false">Normal</string>
-    <string name="yes" translatable="false">oui</string>
-    <string name="title_activity_splash" translatable="false">SplashActivity1</string>
+    <string name="Historique">Historique</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label" translatable="false">First Fragment</string>
-    <string name="second_fragment_label" translatable="false">Second Fragment</string>
-    <string name="next" translatable="false">Next</string>
-    <string name="previous" translatable="false">Previous</string>
+    <string name="first_fragment_label">Premier fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
 
-    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
-    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
-
-    <string name="eseo">Site Eseo</string>
     <string name="map">Localisation</string>
     <string name="localisation">Me localiser</string>
     <string name="goGoogleMap">Voir sur google map</string>
-    <string name="Recycle" translatable="false">recycle</string>
-    <string name="retour">retour</string>
     <string name="parametre">Paramètres</string>
-    <string name="pageLocalisation" translatable="false">pageLocation</string>
-    <string name="Localisation">localisation</string>
     <string name="ajoutAdresse">Ajouter adresse Historique</string>
-    <string name="espace" translatable="false" />
     <string name="suppAllHist">Supprimer Historique</string>
-    <string name="projetAndroid" translatable="false">Projet Android</string>
-    <string name="easter">Si vous etes ici vous avez gagner le droit de me mettre un 18/20 à ce projet !
-    Cordialement </string>
-    <string name="trollpage">Troll Page</string>
     <string name="histTitle">Historique des localisations</string>
     <string name="histvide">Historique Vide</string>
     <string name="textacceptPerm">Pour vous localiser merci d\'accepter le paramètre précédent</string>
-    <string name="luminosite" translatable="false">Luminosite</string>
-    <string name="login" translatable="false">Login</string>
-    <string name="reset" translatable="false">Reset</string>
-    <string name="connexion" translatable="false">Connexion</string>
-    <string name="inscription" translatable="false">Inscription</string>
-    <string name="demandeAutorisation" translatable="false">Demande d\'autorisation</string>
-    <string name="demandeLoc" translatable="false">Demande de localisation</string>
-    <string name="ok" translatable="false">Ok</string>
-    <string name="annuler" translatable="false">Annuler</string>
-    <string name="modif" translatable="false">Modifier identifiant</string>
-    <string name="supp" translatable="false">Supprimer élément</string>
-    <string name="menu_principal" translatable="false">Menu Principal</string>
-    <string name="client" translatable="false">Clients</string>
-    <string name="sensor" translatable="false">Capteurs</string>
-    <string name="decline" translatable="false">Refuser</string>
-    <string name="accept" translatable="false">Accepter</string>
-    <string name="messageconnexion" translatable="false">Voulez-vous vous connecter à notre API ? </string>
-    <string name="connexiondefaut" translatable="false">Cliquer sur incription pour créer un compte </string>
-    <string name="inscriptionmessage" translatable="false">Êtes-vous sur de vouloir créer un compte avec ces identifiants ?</string>
-    <string name="Enregistrer" translatable="false">Enregistrer</string>
-    <string name="api" translatable="false">api</string>
-    <string name="supprimer" translatable="false">Supprimer</string>
-    <string name="modifierMdp" translatable="false">Modifier mot de passe</string>
-    <string name="Photo" translatable="false">Prendre une photo</string>
-    <string name="Description" translatable="false">À propos</string>
-    <string name="menu" translatable="false">Menu</string>
-    <string name="maxime_pouplain" translatable="false">Maxime Pouplain</string>
-    <string name="martin" translatable="false">Martin Courier de Méré</string>
-    <string name="DescriptionAPI" translatable="false">Description API</string>
-    <string name="obtenir_les_donn_es" translatable="false">Obtenir les données</string>
+    <string name="login">Login</string>
+    <string name="reset">Reset</string>
+    <string name="connexion">Connexion</string>
+    <string name="inscription">Inscription</string>
+    <string name="demandeAutorisation">Demande d\'autorisation</string>
+    <string name="demandeLoc">Demande de localisation</string>
+    <string name="ok">Ok</string>
+    <string name="annuler">Annuler</string>
+    <string name="modif">Modifier identifiant</string>
+    <string name="supp">Supprimer élément</string>
+    <string name="menu_principal">Menu Principal</string>
+    <string name="client">Clients</string>
+    <string name="sensor">Capteurs</string>
+    <string name="decline">Refuser</string>
+    <string name="accept">Accepter</string>
+    <string name="messageconnexion">Voulez-vous vous connecter à notre API ? </string>
+    <string name="connexiondefaut">Cliquer sur incription pour créer un compte </string>
+    <string name="inscriptionmessage">Êtes-vous sur de vouloir créer un compte avec ces identifiants ?</string>
+    <string name="Enregistrer">Enregistrer</string>
+    <string name="api">api</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="modifierMdp">Modifier mot de passe</string>
+    <string name="Photo">Prendre une photo</string>
+    <string name="Description">À propos</string>
+    <string name="menu">Menu</string>
+    <string name="maxime_pouplain">Maxime Pouplain</string>
+    <string name="martin">Martin Courier de Méré</string>
+    <string name="DescriptionAPI">Description API</string>
+    <string name="obtenir_les_donn_es">Obtenir les données</string>
     <string name="description_appli">Description Appli</string>
+    <string name="projet_android">Projet Android</string>
 
 
 </resources>
