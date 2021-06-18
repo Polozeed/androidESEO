@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 
 
 /**
- * ApiService
+ * ApiService permettant de créer la connexion avec l'api
  */
 interface ApiService {
 

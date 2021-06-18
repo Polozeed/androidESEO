@@ -23,7 +23,10 @@ import com.example.androideseo.ui.fragment.HistoriqueInfoActivity
 import com.example.androideseo.ui.fragment.client.ListClientActivity
 import com.example.androideseo.ui.utilisateur.ConnexionActivity
 
-
+/**
+ * TODO
+ * Classe gerant la page principale de l'application
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding // <-- Référence à notre ViewBinding

@@ -22,7 +22,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.concurrent.fixedRateTimer
 
-
+/**
+ * TODO
+ * Classe permettant de gerer la recuperation des capteurs du telephone
+ */
 class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var binding: ActivitySensorBinding //

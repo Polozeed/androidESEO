@@ -20,7 +20,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
+/**
+ * TODO
+ * Classe permettant la connexion de l'utilisateur
+ */
 class ConnexionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConnexionBinding

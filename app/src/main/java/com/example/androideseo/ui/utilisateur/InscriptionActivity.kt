@@ -16,6 +16,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * TODO
+ * Classe permettant l'inscription de l'utlisateur
+ */
 class InscriptionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInscriptionBinding // <-- Référence à notre ViewBinding

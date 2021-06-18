@@ -23,6 +23,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * TODO
+ * Classe permettant affichage d'un client apres clic sur liste client
+ */
 class DetailsFragment : Fragment() {
 
     val args: DetailsFragmentArgs by navArgs()

@@ -4,6 +4,10 @@ import com.example.androideseo.data.models.Information
 import com.example.androideseo.data.models.LocalUser
 import com.google.gson.annotations.SerializedName
 
+/**
+ * TODO
+ * Classe correspondant au service information
+ */
 class ServiceInformation {
 
     data class EnregInfo(

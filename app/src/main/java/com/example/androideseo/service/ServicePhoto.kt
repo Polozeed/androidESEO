@@ -3,7 +3,10 @@ package com.example.androideseo.service
 import android.net.Uri
 import com.google.gson.annotations.SerializedName
 
-
+/**
+ * TODO
+ * Classe correspondant au service photo
+ */
 class ServicePhoto {
 
     /**

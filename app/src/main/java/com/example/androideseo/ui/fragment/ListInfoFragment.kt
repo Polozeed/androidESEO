@@ -20,7 +20,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
+/**
+ * TODO
+ * Classe permettant affichage liste info
+ */
 class ListInfoFragment : Fragment() {
 
     val dataSource = emptyDataSource()

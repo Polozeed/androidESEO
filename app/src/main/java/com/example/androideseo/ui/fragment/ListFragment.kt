@@ -22,7 +22,10 @@ import com.example.androideseo.ui.fragment.viewHolder.LocalUserViewHolder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
+/**
+ * TODO
+ * Classe permettant affichage liste client
+ */
 class ListFragment : Fragment() {
 
     val dataSource = emptyDataSource()

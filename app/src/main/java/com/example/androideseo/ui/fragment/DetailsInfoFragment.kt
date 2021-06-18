@@ -22,7 +22,10 @@ import com.example.androideseo.ui.fragment.client.ListClientActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
+/**
+ * TODO
+ * Classe permettant affichage d'une information apres clic sur liste info
+ */
 class DetailsInfoFragment : Fragment() {
 
     val args: DetailsFragmentArgs by navArgs()

@@ -22,7 +22,10 @@ import com.example.androideseo.data.LocalPreferences
 import com.example.androideseo.databinding.ActivityMapBinding
 import java.util.*
 
-
+/**
+ * TODO
+ * Classe permettant d'acceder aux fonctionnalités lié a la map
+ */
 class MapActivity : AppCompatActivity() {
 
     private val PERMISSION_REQUEST_LOCATION: Int = 999;

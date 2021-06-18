@@ -6,7 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import com.example.androideseo.R
 import com.example.androideseo.data.LocalPreferences
-
+/**
+ * TODO
+ * Classe de chargement au demarage de l'application
+ */
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

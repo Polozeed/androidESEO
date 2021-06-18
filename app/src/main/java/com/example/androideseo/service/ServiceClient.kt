@@ -8,6 +8,10 @@ import com.example.androideseo.ui.app.MyApp
 import com.google.gson.annotations.SerializedName
 
 
+/**
+ * TODO
+ * Classe correspondant au service client
+ */
 class ServiceClient {
 
     /**
